@@ -1,0 +1,322 @@
+#App {
+    // border: 2px solid black; /* 2px border, solid style, black color */
+    // padding: 2px; 
+    // margin: 2px; 
+}
+
+.custom-link {
+    color: red;
+}
+
+.nav-icon {
+    width: 24px;
+
+    height: 24px;
+
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+
+#navigationTop {
+    width: 100%;
+    height: auto;
+    // border: 2px solid black; 
+    // padding: 2px;  
+    // margin: 2px;  
+    flex-wrap: wrap;
+
+}
+
+
+#navigationToprow {
+    width: 100%;
+    height: auto;
+    // border: 2px solid red; 
+    // padding: 2px; */
+    // margin: 2px;  */
+    flex-wrap: wrap;
+}
+
+#optionsColumn {
+    display: flex;
+    flex-direction: row;
+    /* Mobil cihazlarda dikey hizalama */
+    justify-content: center;
+    align-items: baseline;
+}
+
+@media (min-width: 768px) {
+    #optionsColumn {
+        flex-direction: row;
+        /* Daha büyük ekranlarda yatay hizalama */
+        justify-content: right;
+        align-items: baseline;
+    }
+}
+
+
+
+
+.column {
+    // border: 2px solid black; 
+    // padding: 2px;  */
+    // margin: 2px;  */
+
+}
+
+#navigationToprow {
+
+    justify-content: space-between;
+}
+
+#profile {
+    font-family: "Raleway", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 23.48px;
+    text-align: left;
+    margin-right: 3px;
+
+}
+
+#aboutUs {
+    width: 88px;
+    height: 17px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: "Raleway", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 23.48px;
+    text-align: left;
+    margin-right: 10px;
+
+}
+
+#contact {
+    font-family: "Raleway", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 23.48px;
+    text-align: left;
+
+    box-shadow: 0px 4px 4px 0px #00000040;
+
+
+}
+
+#exit {
+
+
+    color: black;
+    font-family: "Inter" sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 24.2px;
+    letter-spacing: 0.5px;
+    text-align: left;
+
+}
+
+
+.nav-item {
+    margin-top: 10px;
+}
+
+#myWork {
+    font-family: "Mohave", sans-serif;
+    font-size: 45px;
+    font-weight: 400;
+    line-height: 62.69px;
+    text-align: center;
+
+}
+
+
+body {
+    background: linear-gradient(269.4deg, rgba(245, 218, 255, 0.6) -1.21%, rgba(255, 255, 255, 0) 100%);
+
+}
+
+#mapImage {
+    width: auto;
+    height: auto;
+
+}
+
+
+
+#name {
+    width: 300px;
+    height: 30px;
+
+}
+
+#email {
+    width: 300px;
+    height: 30px;
+
+    margin-top: 10px;
+}
+
+#phonenumber {
+    width: 300px;
+    height: 30px;
+    margin-top: 10px;
+
+}
+
+
+
+#grtintouch {
+    font-family: "Raleway", sans-serif;
+}
+
+#send-button {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+#secondContainer {
+    margin-top: 30px;
+}
+
+input::placeholder {
+    font-size: 12px;
+    opacity: 2px;
+}
+
+#map {
+    width: 100px;
+    height: 100px;
+}
+
+#phoneIcon {
+    border-radius: 20px;
+    /* İsteğe bağlı: köşeleri oval yapmak için */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    /* Daha belirgin gölge */
+
+}
+
+#fax {
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    margin-left: 80px;
+}
+
+#mailicon {
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    margin-left: 90px;
+}
+
+#secondContainer {
+    width: 300px;
+    height: 30px;
+    margin-right: 300px;
+}
+
+#harita {
+    width: auto;
+    height: auto;
+
+
+
+}
+
+@media (max-width:992px) {
+    #harita {
+        width: 500px;
+        height: 500px;
+        margin-top: 20px;
+    }
+
+}
+
+// borders
+
+#harita {
+    // border: 2px solid black; 
+    // padding: 2px;  
+    // margin: 2px;  
+}
+
+
+
+#navigationItselfSecond {
+    width: auto;
+    height: auto;
+    // border: 2px solid black; 
+    // padding: 2px;  
+    // margin: 2px;  
+    justify-content: space-evenly;
+}
+
+#cardItself {
+    width: auto;
+    max-width: 800px; 
+    height: auto;
+
+    background-color: "#fcf5f7";
+    // padding: 2px;  
+    // margin: 2px;
+    // border-radius: 15px;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    // border: 2px solid blue; 
+
+}
+
+@media (min-width="768px") {
+    #cardItself {
+        width: auto;
+        max-width: 800px; // Maksimum genişlik
+        height: auto;
+
+
+        background-color: "#fcf5f7";
+        padding: 2px;
+        margin: 2px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+        border: 2px solid red;
+
+
+    }
+
+}
+
+.card-body {
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.row {
+    width: '%100';
+    // border: 2px solid black;
+    // padding: 2px;
+    // margin: 2px;  
+}
+
+.col-md-6 {
+    width: auto;
+    // border: 2px solid black; 
+    // padding: 2px;  
+    // margin: 2px;  
+}
+
+
+
+
+#harita-container {
+
+    width: auto;
+    height: auto;
+    // border: 2px solid black; 
+    // padding: 2px;  
+    // margin: 2px;  
+}
