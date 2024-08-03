@@ -1,322 +1,319 @@
 #App {
-    // border: 2px solid black; /* 2px border, solid style, black color */
-    // padding: 2px; 
-    // margin: 2px; 
+  // border: 2px solid black; /* 2px border, solid style, black color */
+  // padding: 2px;
+  // margin: 2px;
 }
 
 .custom-link {
-    color: red;
+  color: red;
 }
 
 .nav-icon {
-    width: 24px;
-
-    height: 24px;
-
-    margin-left: 10px;
-    margin-top: 10px;
+  width: 24px;
+  height: 24px;
+  margin-top: 10px;
 }
-
 
 #navigationTop {
-    width: 100%;
-    height: auto;
-    // border: 2px solid black; 
-    // padding: 2px;  
-    // margin: 2px;  
-    flex-wrap: wrap;
-
+  width: 100%;
+  height: auto;
+  // border: 2px solid black;
+  // padding: 2px;
+  // margin: 2px;
+  flex-wrap: wrap;
 }
 
-
 #navigationToprow {
-    width: 100%;
-    height: auto;
-    // border: 2px solid red; 
-    // padding: 2px; */
-    // margin: 2px;  */
-    flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  // border: 2px solid red;
+  // padding: 2px;
+  // margin: 2px;
+  flex-wrap: wrap;
 }
 
 #optionsColumn {
-    display: flex;
-    flex-direction: row;
-    /* Mobil cihazlarda dikey hizalama */
-    justify-content: center;
-    align-items: baseline;
+  display: flex;
+  flex-direction: row;
+  /* Mobil cihazlarda dikey hizalama */
+  // border: 2px solid black;
+  // padding: 2px;
+  // margin: 2px;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (min-width: 768px) {
-    #optionsColumn {
-        flex-direction: row;
-        /* Daha büyük ekranlarda yatay hizalama */
-        justify-content: right;
-        align-items: baseline;
-    }
-}
+// @media (max-width: 576px) {
+//   #optionsColumn {
+//     flex-direction: column;
+//     /* Daha küçük ekranlarda yatay hizalama */
+//     justify-content: right;
+//     align-items: center;
+//     flex-wrap: wrap;
+//   }
+// }
 
-
-
+// @media (min-width: 768px) {
+//   #optionsColumn {
+//     flex-direction: row;
+//     /* Daha büyük ekranlarda yatay hizalama */
+//     justify-content: right;
+//     align-items: baseline;
+//     flex-wrap: row;
+//   }
+// }
 
 .column {
-    // border: 2px solid black; 
-    // padding: 2px;  */
-    // margin: 2px;  */
-
+  // border: 2px solid black;
+  // padding: 2px;  */
+  // margin: 2px;  */
 }
 
 #navigationToprow {
-
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 #profile {
-    font-family: "Raleway", sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 23.48px;
-    text-align: left;
-    margin-right: 3px;
+  font-family: "Raleway", sans-serif;
 
+  font-weight: 700;
+
+  text-align: left;
+  margin-right: 3px;
 }
 
 #aboutUs {
-    width: 88px;
-    height: 17px;
-    gap: 0px;
-    opacity: 0px;
-    font-family: "Raleway", sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 23.48px;
-    text-align: left;
-    margin-right: 10px;
+  font-family: "Raleway", sans-serif;
 
+  font-weight: 700;
+
+  text-align: left;
+  margin-right: 10px;
 }
 
 #contact {
-    font-family: "Raleway", sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 23.48px;
-    text-align: left;
-
-    box-shadow: 0px 4px 4px 0px #00000040;
-
-
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  box-shadow: 0px 4px 4px 0px #00000040;
 }
 
 #exit {
-
-
-    color: black;
-    font-family: "Inter" sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 24.2px;
-    letter-spacing: 0.5px;
-    text-align: left;
-
+  color: black;
+  font-family: "Inter" sans-serif;
+  font-weight: 700;
+  text-align: left;
 }
 
-
 .nav-item {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 #myWork {
-    font-family: "Mohave", sans-serif;
-    font-size: 45px;
-    font-weight: 400;
-    line-height: 62.69px;
-    text-align: center;
-
+  font-family: "Mohave", sans-serif;
+  font-size: 45px;
+  font-weight: 400;
+  line-height: 62.69px;
+  text-align: center;
 }
 
-
 body {
-    background: linear-gradient(269.4deg, rgba(245, 218, 255, 0.6) -1.21%, rgba(255, 255, 255, 0) 100%);
-
+  background: linear-gradient(
+    269.4deg,
+    rgba(245, 218, 255, 0.6) -1.21%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 #mapImage {
-    width: auto;
-    height: auto;
-
+  width: auto;
+  height: auto;
 }
 
-
-
 #name {
-    width: 300px;
-    height: 30px;
-
+  width: 300px;
+  height: 30px;
 }
 
 #email {
-    width: 300px;
-    height: 30px;
+  width: 300px;
+  height: 30px;
+  margin-top: 10px;
+}
 
-    margin-top: 10px;
+#email:before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  
+}
+
+
+.Navbar {
+
+  color: linear-gradient(269.4deg, rgba(245, 218, 255, 0.6) -1.21%, rgba(255, 255, 255, 0) 100%);
+
 }
 
 #phonenumber {
-    width: 300px;
-    height: 30px;
-    margin-top: 10px;
-
+  width: 300px;
+  height: 30px;
+  margin-top: 10px;
 }
 
-
-
 #grtintouch {
-    font-family: "Raleway", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 #send-button {
-    margin-top: 10px;
-    font-size: 12px;
+  margin-top: 10px;
+  font-size: 12px;
 }
 
 #secondContainer {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 input::placeholder {
-    font-size: 12px;
-    opacity: 2px;
+  font-size: 12px;
+  opacity: 2px;
 }
 
 #map {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
 }
 
 #phoneIcon {
-    border-radius: 20px;
-    /* İsteğe bağlı: köşeleri oval yapmak için */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
-    /* Daha belirgin gölge */
-
+  border-radius: 20px;
+  /* İsteğe bağlı: köşeleri oval yapmak için */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+  /* Daha belirgin gölge */
 }
 
 #fax {
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
-    margin-left: 80px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+  margin-left: 80px;
 }
 
 #mailicon {
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
-    margin-left: 90px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+  margin-left: 90px;
 }
 
 #secondContainer {
-    width: 300px;
-    height: 30px;
-    margin-right: 300px;
+  width: 300px;
+  height: 30px;
+  margin-right: 300px;
 }
 
 #harita {
-    width: auto;
-    height: auto;
-
-
-
+  width: auto;
+  height: auto;
 }
 
-@media (max-width:992px) {
-    #harita {
-        width: 500px;
-        height: 500px;
-        margin-top: 20px;
-    }
-
+@media (max-width: 992px) {
+  #harita {
+    width: 500px;
+    height: 500px;
+    margin-top: 20px;
+  }
 }
 
 // borders
 
 #harita {
-    // border: 2px solid black; 
-    // padding: 2px;  
-    // margin: 2px;  
+  // border: 2px solid black;
+  // padding: 2px;
+  // margin: 2px;
 }
 
-
-
 #navigationItselfSecond {
-    width: auto;
-    height: auto;
-    // border: 2px solid black; 
-    // padding: 2px;  
-    // margin: 2px;  
-    justify-content: space-evenly;
+  width: auto;
+  height: auto;
+  // border: 2px solid black;
+  // padding: 2px;
+  // margin: 2px;
+  justify-content: space-evenly;
 }
 
 #cardItself {
-    width: auto;
-    max-width: 800px; 
+  width: auto;
+  max-width: 800px;
+  height: auto;
+
+  background-color: "#fcf5f7";
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+  // border: 2px solid blue;
+  // padding: 2px;
+  // margin: 2px;
+  // border-radius: 15px;
+}
+
+@media (max-width: "576px") {
+  // Küçük ekran
+  #cardItself {
+    width: 400px;
+    max-width: 800px; // Maksimum genişlik
     height: auto;
 
     background-color: "#fcf5f7";
-    // padding: 2px;  
-    // margin: 2px;
-    // border-radius: 15px;  
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
-    // border: 2px solid blue; 
 
+    // border-radius: 15px;
+    // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    // border: 2px solid blue;
+    // padding: 2px;
+    // margin: 2px;
+    // border-radius: 15px;
+  }
 }
 
-@media (min-width="768px") {
-    #cardItself {
-        width: auto;
-        max-width: 800px; // Maksimum genişlik
-        height: auto;
+@media (max-width: "768px") {
+  // orta ekran
+  #cardItself {
+    width: 400px;
+    max-width: 800px; // Maksimum genişlik
+    height: auto;
 
+    background-color: "#fcf5f7";
 
-        background-color: "#fcf5f7";
-        padding: 2px;
-        margin: 2px;
-        border-radius: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
-        border: 2px solid red;
-
-
-    }
-
+    // border-radius: 15px;
+    // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    // border: 2px solid blue;
+    // padding: 2px;
+    // margin: 2px;
+    // border-radius: 15px;
+  }
 }
 
 .card-body {
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
-
-
-
 .row {
-    width: '%100';
-    // border: 2px solid black;
-    // padding: 2px;
-    // margin: 2px;  
+  width: "%100";
+  // border: 2px solid black;
+  // padding: 2px;
+  // margin: 2px;
 }
 
 .col-md-6 {
-    width: auto;
-    // border: 2px solid black; 
-    // padding: 2px;  
-    // margin: 2px;  
+  width: auto;
+  // border: 2px solid black;
+  // padding: 2px;
+  // margin: 2px;
 }
 
-
-
-
 #harita-container {
-
-    width: auto;
-    height: auto;
-    // border: 2px solid black; 
-    // padding: 2px;  
-    // margin: 2px;  
+  width: auto;
+  height: auto;
+  // border: 2px solid black;
+  // padding: 2px;
+  // margin: 2px;
 }
