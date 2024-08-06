@@ -158,7 +158,8 @@ const News = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <Card id="TaskCard">
+                  <Container  id="TaskCard">
+                  <Row md={12}>
                     <Row id="line">
                       <p>
                         ------------------------------------------------------------------------------------------
@@ -194,7 +195,8 @@ const News = () => {
                         </p>
                       </Col>
                     </Row>
-                  </Card>
+                  </Row>
+                  </Container>
                 </div>
                 <div
                   className="col"
@@ -204,7 +206,8 @@ const News = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <Card id="PersonsCard">
+                  <Container id="PersonsCard">
+                  <Row md={12}>
                     <Row id="line">
                       <p>
                         ------------------------------------------------------------------------------------------
@@ -225,7 +228,8 @@ const News = () => {
                       <p>Gökhan</p>
                       <p>Yahya</p>
                     </Row>
-                  </Card>
+                  </Row>
+                  </Container>
                 </div>
               </div>
             </div>

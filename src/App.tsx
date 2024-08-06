@@ -16,6 +16,11 @@ import { useMediaQuery } from "react-responsive";
 import NewsCard from "./components/Cards/NewsCard"
 import NavbarwithSearch from "./components/Navbars/NavbarwithSearch";
 import NavbarformobileFancysidebar from "./components/Navbars/NavbarformobileFancysidebar";
+import DoneTasks from "./components/Cards/DoneTasks";
+import AboutUs from "./components/Cards/AboutUs";
+import PersonList from "./components/Cards/PersonList";
+import Profile from "./components/Cards/Profile";
+import ContactCard from "./components/Cards/ContactCard";
 function App() {
 
   /**
@@ -39,11 +44,22 @@ function App() {
         <Card /> */}
         {/* <Register/> */}
         
-        <NewsCard/>
+        {/* <NewsCard/> */}
         
           {/* <Navbar/> */}
           {/* <NavbarformobileFancysidebar/> */}
-        
+
+          {/* <DoneTasks/> */}
+         
+
+          {/* <AboutUs/> */}
+          
+         
+
+          {/* <PersonList/> */}
+            
+            {/* <Profile/> */}
+            {/* <ContactCard/> */}
         
         
           
