@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import "./styles/fancySidebar.scss";
+import "./../styles/fancySidebar.scss";
 import { DropdownItem, NavItem } from "react-bootstrap";
 import { Button, Dropdown } from "bootstrap";
 
 import DropdownButton from "react-bootstrap/DropdownButton";
-import prg from "./prg.png";
+import prg from "./../components/pngandicons/prg.png";
 const FancySidebar = () => {
   useEffect(() => {
     // Create a link element

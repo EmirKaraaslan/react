@@ -1,30 +1,63 @@
-
-.body {
-  background-color: #f5daff;
-}
-
 .sidebar {
   font-size: 1.5rem;
-  color: black; 
-  width:fit-content;
-  background-image: url('bgbis.png');
+  color: black;
+  width: fit-content;
+  background: linear-gradient(
+    to top right,
+    rgba(238, 174, 202, 1) 40%,
+    rgba(148, 187, 233, 1) 72%,
+    
+
+  );
   
+  background-size: cover; /* Arka plan resmini kaplamak için */
+  background-position: center; /* Arka plan resmini ortalamak için */
   padding: 1rem;
 }
 
-
-@media (max-widith:"768px") {
+@media (max-width: 576px) {
   .sidebar {
-    width: 80px;
-
+    min-width: 30%;
+    box-sizing: border-box;
+    font-size: 1rem; /* Küçük ekranlarda font boyutunu küçültür */
   }
-  
+
+  .sidebar ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  .sidebar li {
+    padding: 0.25rem 0; /* Küçük ekranlarda her öğe için iç boşluğu azaltır */
+  }
+
+  .sidebar.ul.li.svg {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 30%;
+    box-sizing: border-box;
+    font-size: 1rem; /* Orta ekranlarda font boyutunu küçültür */
+  }
+
+  .sidebar ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  .sidebar li {
+    padding: 0.25rem 0; /* Küçük ekranlarda her öğe için iç boşluğu azaltır */
+  }
 }
 
 .menulist {
   padding-left: 0;
   list-style-type: none;
-  width: 100%;
+  width: auto;
   height: 100vh;
   text-align: center;
   justify-content: end;
@@ -35,8 +68,6 @@
   width: 100%;
   margin-block: 1.3rem;
   height: 4rem;
-  
-  
 }
 
 .menulist > li:hover {
@@ -59,7 +90,6 @@
 }
 
 .btn {
-  
   width: 120px;
   height: 33px;
   top: 78px;
@@ -73,7 +103,6 @@
   border-radius: 10px;
   margin-right: 10%;
 }
-
 
 .svg {
   //*hide the SVG *//

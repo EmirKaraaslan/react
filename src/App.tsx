@@ -8,12 +8,13 @@ import phoneIcon from "./pngandicons/phone-call.png";
 import { url } from "inspector";
 import Navbar from "./components/Navbars/Navbar";
 import Login from "./components/Logins/LoginFirst"; 
-import Card from "./components/Cards/Card";
+import Card from "./components/Cards/ContactCard";
 import Register from "./components/Registers/Register";
 import BurgerNavbar from "./components/Navbars/burgerNavbar";
-import FancySidebar from "./fancySidebar";
+import FancySidebar from "./components/fancySidebar";
 import { useMediaQuery } from "react-responsive";
-
+import NewsCard from "./components/Cards/NewsCard"
+import NavbarwithSearch from "./components/Navbars/NavbarwithSearch";
 function App() {
 
   /**
@@ -32,11 +33,16 @@ function App() {
       <body>
         {/* <Login/> */}
 
-        {/* {isWideScreen && <Navbar/>}
-        {isNarrowScreen && <BurgerNavbar />}
+        {/* {isWideScreen && <Navbar/>} */}
+        {/* {isNarrowScreen && <BurgerNavbar />}
         <Card /> */}
         {/* <Register/> */}
-        <FancySidebar/>
+        
+        <NewsCard/>
+
+        
+        
+        
           
       </body>
     </div>
