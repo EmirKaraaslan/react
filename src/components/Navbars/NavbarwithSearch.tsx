@@ -59,7 +59,7 @@ export default function NavbarwithSearch() {
                   <img
                     src={exitdoor}
                     alt="Exit"
-                    style={{ width: "27px", height: "27px"  }}
+                    style={{ width: "30px", height: "30px" , marginTop:"10px"  }}
                   />
                 </Col>
                 <Col >

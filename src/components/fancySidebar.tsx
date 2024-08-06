@@ -7,6 +7,11 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import prg from "./../components/pngandicons/prg.png";
 const FancySidebar = () => {
   useEffect(() => {
+
+
+
+
+    
     // Create a link element
     const link = document.createElement("link");
     link.rel = "stylesheet";

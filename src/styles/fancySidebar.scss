@@ -1,14 +1,14 @@
 .sidebar {
+  min-height: 1200px; // ????
+  max-width: 180PX;
+  height: 100%; /* Viewport yüksekliği kadar */
+}
+
+.sidebar {
   font-size: 1.5rem;
   color: black;
-  width: fit-content;
-  background: linear-gradient(
-    to top right,
-    rgba(238, 174, 202, 1) 40%,
-    rgba(148, 187, 233, 1) 72%,
-    
-
-  );
+  width: 100%;
+  background: url('https://s3-alpha-sig.figma.com/img/3185/9c39/bcb9373b12a6ecfe9d8ce640e3ea52ce?Expires=1724025600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=fvBsa6W2-B1Wx0tmIUQoQgXcYqDUlix4LmYXc1Kpj0~XWw309wd4bprq367wyz917sGu3SoJL2FDPNh-HGWd5nwNph32Z7EXe4SP1kIQ~FiWhxf8NgHp2aMG-ZW4egGMyAfNOTyj7cVPslFY8d3kxasdCAAWTWBABW4A~LuKA7A5-w6~NywG00c8mzjy7vqZcwgJOEty4of0mTvFk1jmIEDJRw2lhRfiDXI9x6U9p~lSbBPs3FRMpQa7K1IXn94uNhFa26o07cutEcwURSdmMQjrEVoD7ZvJ7A4uqunJR7D3Uo~ai6A2OGaeEQTuZ3aiMFS~qd146hNgqj204y0VeA__');
   
   background-size: cover; /* Arka plan resmini kaplamak için */
   background-position: center; /* Arka plan resmini ortalamak için */
@@ -71,7 +71,7 @@
 }
 
 .menulist > li:hover {
-  background-color: #f5daff;
+  background-color: #f2f2fd;
   color: black;
   border-top-left-radius: 100vh;
   border-bottom-left-radius: 100vh;
@@ -84,7 +84,7 @@
   left: 100%;
   bottom: -2rem;
   width: 1rem;
-  background-color: #f5daff;
+  background-color: #f2f2fd;
   background-size: cover;
   clip-path: url(#my-clip-path);
 }
@@ -111,6 +111,4 @@
   height: 0;
 }
 
-.row {
-  justify-content: center;
-}
+

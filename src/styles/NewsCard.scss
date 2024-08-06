@@ -1,18 +1,199 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background-color: #f2f2fd;
+}
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .container {
-    border: 2px solid red;
-    padding: 1px;
-    margin: 1px;
-    width: auto;
+  //   border: 2px solid red;
+  padding: 1px;
+  margin: 1px;
+  width: auto;
 }
 
 .row {
-    border: 2px solid rgb(13, 255, 0);
-    padding: 1px;
-    margin: 1px;
+  // border: 2px solid rgb(13, 255, 0);
+  padding: 1px;
+  margin: 1px;
 }
 
 .column {
-    border: 2px solid rgb(0, 34, 255);
-    padding: 1px;
-    margin: 1px;
+  border: 2px solid rgb(0, 34, 255);
+  padding: 1px;
+  margin: 1px;
+}
+
+#cardItself {
+  width: 165vh;
+  height: 100%;
+  //   border: 2px solid green;
+  border-radius: 40px;
+
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.45);
+}
+
+#hottopics {
+  font-family: Roboto;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 42.19px;
+  text-align: left;
+
+  text-align: left;
+}
+
+#cardgroup {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+
+  //   border: 2px solid greenyellow;
+}
+
+#triplecard {
+  box-sizing: border-box;
+}
+
+#latestnews {
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28.13px;
+  text-align: left;
+  //   border: 2px solid red;
+  text-align: left;
+  margin-top: 30px;
+  padding-bottom: 0px;
+}
+
+#cardtitle {
+  font-family: Playfair Display;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.99px;
+  text-align: left;
+}
+
+#TaskCard {
+  flex-wrap: wrap;
+
+  width: 100%;
+  min-height: 400px;
+  height: 100%;
+
+  //   border: 2px solid green;
+  border-radius: 40px;
+
+  background-image: url("https://s3-alpha-sig.figma.com/img/3185/9c39/bcb9373b12a6ecfe9d8ce640e3ea52ce?Expires=1724025600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=fvBsa6W2-B1Wx0tmIUQoQgXcYqDUlix4LmYXc1Kpj0~XWw309wd4bprq367wyz917sGu3SoJL2FDPNh-HGWd5nwNph32Z7EXe4SP1kIQ~FiWhxf8NgHp2aMG-ZW4egGMyAfNOTyj7cVPslFY8d3kxasdCAAWTWBABW4A~LuKA7A5-w6~NywG00c8mzjy7vqZcwgJOEty4of0mTvFk1jmIEDJRw2lhRfiDXI9x6U9p~lSbBPs3FRMpQa7K1IXn94uNhFa26o07cutEcwURSdmMQjrEVoD7ZvJ7A4uqunJR7D3Uo~ai6A2OGaeEQTuZ3aiMFS~qd146hNgqj204y0VeA__");
+  object-fit: fill;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.45);
+}
+
+#PersonsCard {
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 400px;
+  height: 100%;
+
+  //   border: 2px solid green;
+  border-radius: 40px;
+
+  background: url("https://s3-alpha-sig.figma.com/img/3185/9c39/bcb9373b12a6ecfe9d8ce640e3ea52ce?Expires=1724025600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=fvBsa6W2-B1Wx0tmIUQoQgXcYqDUlix4LmYXc1Kpj0~XWw309wd4bprq367wyz917sGu3SoJL2FDPNh-HGWd5nwNph32Z7EXe4SP1kIQ~FiWhxf8NgHp2aMG-ZW4egGMyAfNOTyj7cVPslFY8d3kxasdCAAWTWBABW4A~LuKA7A5-w6~NywG00c8mzjy7vqZcwgJOEty4of0mTvFk1jmIEDJRw2lhRfiDXI9x6U9p~lSbBPs3FRMpQa7K1IXn94uNhFa26o07cutEcwURSdmMQjrEVoD7ZvJ7A4uqunJR7D3Uo~ai6A2OGaeEQTuZ3aiMFS~qd146hNgqj204y0VeA__");
+
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.45);
+}
+
+#taskattribiutes {
+  margin-top: 0%;
+  margin-left: 10%;
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 19.5px;
+  text-align: left;
+  color: rgba(130, 130, 130, 1);
+}
+
+#taskproperities {
+  margin-top: 2%;
+  margin-left: 10%;
+
+  font-family: Poppins;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 19.5px;
+  text-align: left;
+  color: rgba(79, 79, 79, 1);
+}
+
+#line {
+  opacity: 70%;
+  color: rgba(224, 224, 224, 1);
+}
+
+#personTitle {
+  font-family: Poppins;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 19.5px;
+  text-align: left;
+  color: rgba(130, 130, 130, 1);
+}
+
+#personName {
+  font-family: Playfair Display;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.99px;
+  text-align: left;
+  color: rgba(18, 18, 33, 0.5);
+
+}
+
+
+/* NewsCard.scss */
+
+@media (max-width: 768px) {
+  .col {
+    width: 100%;
+  }
+  .col .card {
+    width: 100%;
+  }
+}
+
+
+/* NewsCard.scss */
+
+#TaskCard, #PersonsCard {
+  width: 100%;
+  max-width: 400px; /* İstediğiniz maksimum genişlik */
+  margin: auto;
+}
+
+.card-body {
+  overflow: hidden; /* İçeriğin taşmasını engellemek için */
+}
+
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+  }
 }

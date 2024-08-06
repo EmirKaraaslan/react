@@ -15,6 +15,7 @@ import FancySidebar from "./components/fancySidebar";
 import { useMediaQuery } from "react-responsive";
 import NewsCard from "./components/Cards/NewsCard"
 import NavbarwithSearch from "./components/Navbars/NavbarwithSearch";
+import NavbarformobileFancysidebar from "./components/Navbars/NavbarformobileFancysidebar";
 function App() {
 
   /**
@@ -33,13 +34,15 @@ function App() {
       <body>
         {/* <Login/> */}
 
-        {/* {isWideScreen && <Navbar/>} */}
-        {/* {isNarrowScreen && <BurgerNavbar />}
+        {/* {isWideScreen && <Navbar/>}
+        {isNarrowScreen && <BurgerNavbar />}
         <Card /> */}
         {/* <Register/> */}
         
         <NewsCard/>
-
+        
+          {/* <Navbar/> */}
+          {/* <NavbarformobileFancysidebar/> */}
         
         
         
