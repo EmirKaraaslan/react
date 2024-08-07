@@ -1,0 +1,178 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background-color: #f2f2fd;
+}
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.container {
+  //   border: 2px solid red;
+  padding: 1px;
+  margin: 1px;
+  width: auto;
+}
+
+.row {
+  // border: 2px solid rgb(13, 255, 0);
+  padding: 1px;
+  margin: 1px;
+}
+
+.column {
+  border: 2px solid rgb(0, 34, 255);
+  padding: 1px;
+  margin: 1px;
+}
+
+#cardItself {
+  width: 165vh;
+  height: 100vh;
+  //   border: 2px solid green;
+  border-radius: 40px;
+  background: rgba(245, 218, 255, 0.6);
+
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.45);
+}
+
+/* NewsCard.scss */
+
+@media (max-width: 768px) {
+  .col {
+    width: 100%;
+  }
+  .col .card {
+    width: 100%;
+  }
+}
+
+/* NewsCard.scss */
+
+#TaskCard,
+#PersonsCard {
+  width: 100%;
+  max-width: 400px; /* İstediğiniz maksimum genişlik */
+  margin: auto;
+}
+
+.card-body {
+  overflow: hidden; /* İçeriğin taşmasını engellemek için */
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+#button {
+  color: white;
+  background-color: black;
+  align-items: baseline;
+
+  width: 40%;
+}
+
+#taskstatusrow {
+  margin-top: 3%;
+
+  border-radius: 40px;
+  background-color: white;
+
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+#key {
+  height: 50px;
+  background: rgba(161, 95, 244, 0.5);
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  color: rgba(252, 252, 252, 1);
+  border-radius: 5px;
+}
+
+#summary {
+  height: 50px;
+  width: 400px;
+  background: rgba(161, 95, 244, 0.5);
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  color: rgba(252, 252, 252, 1);
+  border-radius: 5px;
+}
+
+#status {
+  height: 50px;
+  background: rgba(161, 95, 244, 0.5);
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  color: rgba(252, 252, 252, 1);
+  border-radius: 5px;
+}
+
+#assignee {
+  height: 50px;
+  background: rgba(161, 95, 244, 0.5);
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  color: rgba(252, 252, 252, 1);
+  border-radius: 5px;
+}
+
+#taskitself {
+}
+
+#taskkey {
+  font-family: Poppins;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 37.5px;
+  text-align: left;
+}
+
+#tasksummary {
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22.5px;
+  text-align: left;
+}
+
+#taskstatus {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: left;
+  color: rgba(190, 83, 83, 1);
+}
+
+#taskassignee {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: left;
+  color: black;
+}

@@ -21,6 +21,7 @@ import AboutUs from "./components/Cards/AboutUs";
 import PersonList from "./components/Cards/PersonList";
 import Profile from "./components/Cards/Profile";
 import ContactCard from "./components/Cards/ContactCard";
+import Tasks from "./components/Cards/Tasks";
 function App() {
 
   /**
@@ -60,6 +61,8 @@ function App() {
             
             {/* <Profile/> */}
             {/* <ContactCard/> */}
+
+            <Tasks/>
         
         
           
