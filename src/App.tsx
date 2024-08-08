@@ -1,72 +1,42 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import Button from "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import exitlogo from "./pngandicons/doorexit.png";
-import phoneIcon from "./pngandicons/phone-call.png";
-import { url } from "inspector";
-import Navbar from "./components/Navbars/Navbar";
-import Login from "./components/Logins/LoginFirst"; 
-import Card from "./components/Cards/ContactCard";
-import Register from "./components/Registers/Register";
-import BurgerNavbar from "./components/Navbars/burgerNavbar";
-import FancySidebar from "./components/fancySidebar";
 import { useMediaQuery } from "react-responsive";
-import NewsCard from "./components/Cards/NewsCard"
-import NavbarwithSearch from "./components/Navbars/NavbarwithSearch";
-import NavbarformobileFancysidebar from "./components/Navbars/NavbarformobileFancysidebar";
-import DoneTasks from "./components/Cards/DoneTasks";
+import NewsCard from "./components/Cards/NewsCard";
 import AboutUs from "./components/Cards/AboutUs";
-import PersonList from "./components/Cards/PersonList";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Login from "./components/Logins/LoginFirst";
 import Profile from "./components/Cards/Profile";
 import ContactCard from "./components/Cards/ContactCard";
-import Tasks from "./components/Cards/Tasks";
-function App() {
+import Navbar from "react-bootstrap/esm/Navbar";
+import BurgerNavbar from "./components/Navbars/burgerNavbar";
 
-  /**
-   *  burada screen daralmasında istediğim tsx dosyasını
-   *   kullnmak için reactın sağladığı  'useMediaQuery özellğini kullandım
-   * */ 
-  const isWideScreen = useMediaQuery({ query: "(min-width:768px)" });
-  const isNarrowScreen = useMediaQuery({ query: "(max-width:768px)" });
+function App() {
+ 
   return (
     <div className="App">
-      <head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-      </head>
-      <body>
-        {/* <Login/> */}
 
-        {/* {isWideScreen && <Navbar/>}
-        {isNarrowScreen && <BurgerNavbar />}
-        <Card /> */}
-        {/* <Register/> */}
+    
+
+
+      {/* Yönlendirme ve sayfa içeriği */}
+      <Router>
+        {/* Menü ve navbar bileşenlerini buraya ekleyebilirsiniz */}
+        <nav>
+          {/* Navigasyon linkleri */}
+
+        </nav>
         
-        {/* <NewsCard/> */}
-        
-          {/* <Navbar/> */}
-          {/* <NavbarformobileFancysidebar/> */}
 
-          {/* <DoneTasks/> */}
-         
+        <Routes>
+          <Route path="/" element={<NewsCard />} />
+          <Route path="/Profile" element={<Profile/>}/>
+          <Route path="/AboutUs" element={<AboutUs />} />
+          <Route path="/Contact" element={<ContactCard/>}/>
+          {/* <Route path="/Exit" element={<Login/>}/> */}
 
-          {/* <AboutUs/> */}
-          
-         
-
-          {/* <PersonList/> */}
-            
-            {/* <Profile/> */}
-            {/* <ContactCard/> */}
-
-            <Tasks/>
-        
-        
-          
-      </body>
+        </Routes>
+      </Router>
     </div>
   );
 }

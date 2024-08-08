@@ -27,7 +27,7 @@ const News = () => {
       <Container fluid>
         <div
           className="row"
-          style={{ border: "2px solid black", justifyContent: "center" }}
+          style={{  justifyContent: "center" }}
         >
           <div
             className="col col-md-3"
@@ -56,7 +56,6 @@ const News = () => {
             <div
               className="row"
               style={{
-                border: "2px solid black",
                 padding: "0px",
                 justifyContent: "center",
               }}
@@ -73,7 +72,7 @@ const News = () => {
                 justifyContent: "center",
               }}
             >
-              <Card id="cardItself">
+              <Card id="cardItselfnewscard">
                 <Card.Body>
                   <Row>
                     <h3 id="hottopics">Hot Topics</h3>
@@ -153,16 +152,17 @@ const News = () => {
                 <div
                   className="col"
                   style={{
-                    border: "2px solid green",
+                    //// sizing problem
+                    // border: "2px solid green",
                     display: "flex",
                     justifyContent: "center",
                   }}
                 >
                   <Container  id="TaskCard">
-                  <Row md={12}>
+                  <Row md={8}>
                     <Row id="line">
                       <p>
-                        ------------------------------------------------------------------------------------------
+                        -----------------------------------------------------
                       </p>
                     </Row>
                     <Row id="taskattributes">
@@ -178,7 +178,7 @@ const News = () => {
                     </Row>
                     <Row id="line">
                       <p>
-                        ------------------------------------------------------------------------------------------
+                      -----------------------------------------------------
                       </p>
                     </Row>
                     <Row id="taskproperties">
@@ -201,7 +201,9 @@ const News = () => {
                 <div
                   className="col"
                   style={{
-                    border: "2px solid green",
+                    //// sizing problem
+
+                    // border: "2px solid green",
                     display: "flex",
                     justifyContent: "center",
                   }}
@@ -210,7 +212,7 @@ const News = () => {
                   <Row md={12}>
                     <Row id="line">
                       <p>
-                        ------------------------------------------------------------------------------------------
+                      -----------------------------------------------------
                       </p>
                     </Row>
                     <Row id="personTitle" style={{ textAlign: "left" }}>
@@ -218,7 +220,7 @@ const News = () => {
                     </Row>
                     <Row id="line">
                       <p>
-                        ------------------------------------------------------------------------------------------
+                      -----------------------------------------------------
                       </p>
                     </Row>
                     <Row id="personName" style={{ textAlign: "left" }}>

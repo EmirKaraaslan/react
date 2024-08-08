@@ -1,12 +1,24 @@
 import React from 'react'
 import phoneIcon from '../pngandicons/phone-call.png'
 import '../../styles/contact.scss'
+import { useMediaQuery } from 'react-responsive';
+import { Navbar } from 'react-bootstrap';
+import BurgerNavbar from '../Navbars/burgerNavbar';
+import NavbarformobileFancysidebar from '../Navbars/NavbarformobileFancysidebar';
 
 export default function Card() {
+  const isWideScreen = useMediaQuery({ query: "(min-width: 768px)" });
+  const isNarrowScreen = useMediaQuery({ query: "(max-width: 768px)" });
+
 
   return (
 
     <div>
+
+      {isWideScreen && <Navbar/>}
+        {isNarrowScreen && <BurgerNavbar />}
+        
+
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -30,8 +42,8 @@ export default function Card() {
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossOrigin="anonymous" />
-    <div className="card mx-auto my-5" id="cardItself" style={{backgroundColor:"#fcf5f7"}}   >
-    <div className='card-body d-flex flex-column'>
+    <div className="card mx-auto my-5 d-flex flex-column" id="cardItselfcontact" style={{backgroundColor:"#fcf5f7"}}   >
+    <div className='card-body d-flex flex-column' id="cardbodycontact">
 
       <div className='container d-flex flex-column' >
 
@@ -45,15 +57,15 @@ export default function Card() {
             </p>
 
             <form action='submit' method='post'>
-              <input type='name' id='name' name='name' placeholder='Name *' style={{ borderColor: "#dfdbdf", borderStyle: "groove", textAlign: "left", border: "1px solid #ccc" }}></input>
+              <input type='name' id='namecontact' name='name' placeholder='Name *' style={{ borderColor: "#dfdbdf", borderStyle: "groove", textAlign: "left", border: "1px solid #ccc" }}></input>
             </form>
 
             <form action='submit' method='post'>
-              <input type='email' id='email' name='email' placeholder='Email' style={{ borderColor: "#dfdbdf", borderStyle: "groove", border: "1px solid #ccc" }}></input>
+              <input type='email' id='emailcontact' name='email' placeholder='Email' style={{ borderColor: "#dfdbdf", borderStyle: "groove", border: "1px solid #ccc" }}></input>
             </form>
 
             <form action='submit' method='post'>
-              <input type='number' id='phonenumber' name='phonenumber' placeholder='Phone number' style={{ borderColor: "#dfdbdf", borderStyle: "groove", border: "1px solid #ccc" }}></input>
+              <input type='number' id='phonenumbercontact' name='phonenumber' placeholder='Phone number' style={{ borderColor: "#dfdbdf", borderStyle: "groove", border: "1px solid #ccc" }}></input>
             </form>
 
             <button type='submit' className='btn ' id="send-button" style={{ background: "#a46ff2", width: "300px", height: "35px", color: "white", fontFamily: "" }}>SEND</button>
@@ -64,7 +76,7 @@ export default function Card() {
 
 
 
-                <li className="nav-item" id="phoneIcon">
+                <li className="nav-item" id="phoneIconcontact">
                   <img src={phoneIcon} style={{ width: "30px", height: "30px" }} />
                 </li>
 

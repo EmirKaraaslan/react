@@ -31,7 +31,7 @@
     margin: 1px;
   }
   
-  #cardItself {
+  #cardItselfprofile {
     width: 165vh;
     height: 100vh;
     //   border: 2px solid green;
@@ -105,7 +105,7 @@
   }
 
 
-  #name {
+  #nameprofile {
     width: 300px;
     height: 30px;
     background-color: transparent;
@@ -116,7 +116,7 @@
 
 
 
-  #email {
+  #emailprofile {
     width: 300px;
     height: 30px;
     background-color: transparent;
@@ -129,7 +129,7 @@
 
 
   
-#email:before {
+#emailprofile:before {
     content: "";
     position: absolute;
     left: 10px;
@@ -140,7 +140,7 @@
   }
 
 
-  #phonenumber {
+  #phonenumberprofile {
     width: 300px;
     height: 30px;
     background-color: transparent;
@@ -149,7 +149,7 @@
     border: 2px solid black
   }
 
-  #password {
+  #passwordprofile {
     width: 300px;
     height: 30px;
     background-color: transparent;

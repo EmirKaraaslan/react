@@ -11,7 +11,7 @@ const Login = () => {
         href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:wght@100..900&family=Mohave:ital,wght@0,300..700;1,300..700&display=swap"
         rel="stylesheet"
       ></link>
-      <body>
+      <body id="bodylogin" style={{height:"100vh"}}>
         <div className="container-fluid">
           <div className="row" id="rowGeneral">
             <div className="col-md-1" id="columnModel">
@@ -46,7 +46,7 @@ const Login = () => {
                 </h1>
                 <div
                   className="card mx-auto my-5"
-                  id="cardItself"
+                  id="cardItselflogin"
                   style={{ backgroundColor: "#212936" }}
                 >
                   <p id="welcome">Welcome!</p>
@@ -61,7 +61,7 @@ const Login = () => {
                     Sign in to your account
                   </p>
 
-                  <div className="card-body d-flex flex-column">
+                  <div className="card-body d-flex flex-column" id="cardbodylogin">
                     <div className="container d-flex flex-column">
                       <div className="row" id="row">
                         <div className="col-md-9" id="emailCol">
@@ -117,7 +117,7 @@ const Login = () => {
                   </div>
                 </div>
               </div>
-              <div className="column" style={{ margin: "0" }}>
+              <div className="columnlogin" style={{ margin: "0" }}>
                 <p id="donthaveanaccount">
                   Don't have an account?<span id="signup">Sign Up</span>
                 </p>

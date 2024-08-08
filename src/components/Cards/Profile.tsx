@@ -74,7 +74,7 @@ const News = () => {
                 justifyContent: "center",
               }}
             >
-              <Card id="cardItself">
+              <Card id="cardItselfprofile">
                 <Card.Body>
 
 
@@ -87,7 +87,7 @@ const News = () => {
                     <form action="submit" method="post">
                       <input
                         type="name"
-                        id="name"
+                        id="nameprofile"
                         name="name"
                         placeholder="Username"
                         
@@ -97,7 +97,7 @@ const News = () => {
                     <form action="submit" method="post">
                       <input
                         type="email"
-                        id="email"
+                        id="emailprofile"
                         name="email"
                         placeholder="Email"
                         
@@ -107,7 +107,7 @@ const News = () => {
                     <form action="submit" method="post">
                       <input
                         type="number"
-                        id="phonenumber"
+                        id="phonenumberprofile"
                         name="phonenumber"
                         placeholder="Phone number"
                        
@@ -117,7 +117,7 @@ const News = () => {
                     <form action="submit" method="post">
                       <input
                         type="password"
-                        id="password"
+                        id="passwordprofile"
                         name="password"
                         placeholder="password"
                        

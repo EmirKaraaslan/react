@@ -43,13 +43,13 @@ export default function NavbarwithSearch() {
           </Col>
           <Col xs="auto" style={{ justifyContent: "space-between" }}>
             <Nav className="d-flex">
-              <Nav.Link href="#home" id="Profile" style={{ marginRight: "40px" }}>
+              <Nav.Link href="/Profile" id="Profile" style={{ marginRight: "40px" }}>
                 Profile{" "}
               </Nav.Link>
-              <Nav.Link href="#home" id="Aboutus" style={{ marginRight: "40px" }}>
+              <Nav.Link href="/Aboutus" id="Aboutus" style={{ marginRight: "40px" }}>
                 About Us
               </Nav.Link>
-              <Nav.Link href="#home" id="Contact">Contact</Nav.Link>
+              <Nav.Link href="/Contact" id="Contact">Contact</Nav.Link>
             </Nav>
           </Col>
           <Col xs="auto">
@@ -63,7 +63,7 @@ export default function NavbarwithSearch() {
                   />
                 </Col>
                 <Col >
-                  <Nav.Link href="#home" id="Exit" >Exit</Nav.Link>
+                  <Nav.Link href="/Exit" id="Exit" >Exit</Nav.Link>
                 </Col>
               </Row>
             </Container>

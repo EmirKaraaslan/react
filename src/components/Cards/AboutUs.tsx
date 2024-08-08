@@ -74,7 +74,9 @@ const News = () => {
                 justifyContent: "center",
               }}
             >
-              <Card id="cardItself">
+              <Card id="cardItselfaboutus" className="d-flex flex-column"
+              style={{ height: "100%" }}
+              >
                 <Card.Body>
                   <Row id="title">
                     <h1 style={{textAlign:"start"}}>We are,</h1>
@@ -92,6 +94,10 @@ const News = () => {
                       Class aptent taciti sociosqu ad litora torquent per
                       conubia nostra, per inceptos himenaeos. Praesent auctor
                       purus luctus enim egestas, ac scelerisque ante pulvinar.
+                      Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu
+                      tempor urna. Curabitur vel bibendum lorem. Morbi convallis
+                      convallis diam sit amet lacinia. Aliquam in elementum
+                      tellus.   purus luctus enim egestas, ac scelerisque ante pulvinar.
                       Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu
                       tempor urna. Curabitur vel bibendum lorem. Morbi convallis
                       convallis diam sit amet lacinia. Aliquam in elementum

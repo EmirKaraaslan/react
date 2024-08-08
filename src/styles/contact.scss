@@ -129,18 +129,18 @@ body {
   height: auto;
 }
 
-#name {
+#namecontact {
   width: 300px;
   height: 30px;
 }
 
-#email {
+#emailcontact {
   width: 300px;
   height: 30px;
   margin-top: 10px;
 }
 
-#email:before {
+#emailcontact:before {
   content: "";
   position: absolute;
   left: 10px;
@@ -157,7 +157,7 @@ body {
 
 }
 
-#phonenumber {
+#phonenumbercontact {
   width: 300px;
   height: 30px;
   margin-top: 10px;
@@ -186,7 +186,7 @@ input::placeholder {
   height: 100px;
 }
 
-#phoneIcon {
+#phoneIconcontact {
   border-radius: 20px;
   /* İsteğe bağlı: köşeleri oval yapmak için */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
@@ -241,7 +241,7 @@ input::placeholder {
   justify-content: space-evenly;
 }
 
-#cardItself {
+#cardItselfcontact {
   width: auto;
   max-width: 800px;
   height: auto;
@@ -291,7 +291,7 @@ input::placeholder {
   }
 }
 
-.card-body {
+#cardbodycontact {
   justify-content: center;
   align-items: center;
 }

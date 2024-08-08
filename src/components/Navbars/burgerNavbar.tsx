@@ -7,17 +7,17 @@ const MyNavbar = () => {
       <Container>
         <Navbar.Brand href="#">MyWork</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-navburger" >
           <Nav className="me-auto">
-            <Nav.Link href="#">Profile</Nav.Link>
-            <Nav.Link href="#">About us</Nav.Link>
-            <Nav.Item>
-              <Button style={{color:'black',backgroundColor:'#9D9DFF' , borderColor:'#9D9DFF'}}>Contact</Button>
-            </Nav.Item>
+            <Nav.Link href="/Profile" >Profile</Nav.Link>
+            <Nav.Link href="/AboutUs">About us</Nav.Link>
+            <Nav.Link href="/Contact">Contact</Nav.Link>
+            
             <Nav.Item>
               
                   <img src={exitLogo} style={{width:'20px' , height:'20px'}} alt="exitLogo"/>
-                  <label>Exit</label>
+                  <a className="nav-link " id="exitburger" href="/Exit" >Exit</a>
+
                 
             </Nav.Item>
             

@@ -30,15 +30,15 @@ export default function NavbarformobileFancysidebar() {
 
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                  <Nav.Link href="#" id="navlink">Profile</Nav.Link>
-                  <Nav.Link href="#" id="navlink">About us</Nav.Link>
-                  <Nav.Link href="#" id="navlink">Contact</Nav.Link>
+                  <Nav.Link href="/Profile" id="navlink">Profile</Nav.Link>
+                  <Nav.Link href="/AboutUs" id="navlink">About us</Nav.Link>
+                  <Nav.Link href="/Contact" id="navlink">Contact</Nav.Link>
                 </Nav>
               </Navbar.Collapse>
             </Col>
 
             <Col>
-              <Nav.Link href="#home" id="Exit">
+              <Nav.Link href="/Exit" id="Exit">
                 Exit
               </Nav.Link>
             </Col>
