@@ -13,6 +13,7 @@ import BurgerNavbar from "./components/Navbars/burgerNavbar";
 import PersonList from "./components/Cards/PersonList";
 import Tasks from "./components/Cards/Tasks";
 import DoneTasks from "./components/Cards/DoneTasks";
+import NavbarformobileFancysidebar from "./components/Navbars/NavbarformobileFancysidebar";
 
 function App() {
  
@@ -29,6 +30,7 @@ function App() {
           {/* Navigasyon linkleri */}
 
         </nav>
+
         
 
         <Routes>

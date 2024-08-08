@@ -110,6 +110,7 @@ const FancySidebar = () => {
           >
             {/* Info */}
             <svg
+              onClick={handleClickInfo}
               width="195"
               height="50"
               viewBox="0 0 217 51"
