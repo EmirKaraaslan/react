@@ -1,7 +1,7 @@
 import React from 'react'
 import exitlogo from '../../components/pngandicons/doorexit.png'
 
-export default function hamburgerNavbar() {
+export default function Navbar() {
   return (
     <div>
       

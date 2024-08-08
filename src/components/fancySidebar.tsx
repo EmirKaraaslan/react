@@ -35,6 +35,30 @@ const FancySidebar = () => {
     };
   }, []);
 
+  // Routing inside
+
+  const handleClickInfo = () => {
+    window.location.href = '/Profile'; // Burada yönlendirme yapıyoruz
+  };
+
+  const handleClickNews = () => {
+    window.location.href = '/NewsCard'; // Burada yönlendirme yapıyoruz
+  };
+
+  const handleClikTasks = () => {
+    window.location.href = '/Tasks'; // Burada yönlendirme yapıyoruz
+  };
+
+  const handleClickDoneTasks = () => {
+    window.location.href = '/DoneTasks'; // Burada yönlendirme yapıyoruz
+  };
+
+  const handleClickPerosnlist = () => {
+    window.location.href = '/PersonList'; // Burada yönlendirme yapıyoruz
+  };
+
+
+
   return (
     <div className="body">
       <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -89,6 +113,7 @@ const FancySidebar = () => {
               width="195"
               height="50"
               viewBox="0 0 217 51"
+              
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -114,6 +139,7 @@ const FancySidebar = () => {
             {/* News */}
             <Link to="/about" style={{ display: 'block' }}/>
             <svg
+              onClick={handleClickNews}
               width="200"
               height="50"
               viewBox="0 0 217 51"
@@ -151,6 +177,7 @@ const FancySidebar = () => {
             }}
           >
             <svg
+              onClick={handleClikTasks}
               width="200"
               height="50"
               viewBox="0 0 218 59"
@@ -178,6 +205,7 @@ const FancySidebar = () => {
           >
             {/* Done Tasks */}
             <svg
+            onClick={handleClickDoneTasks}
               width="200"
               height="50"
               viewBox="0 0 231 52"

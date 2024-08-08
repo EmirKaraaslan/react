@@ -2,12 +2,12 @@ import React from 'react'
 import phoneIcon from '../pngandicons/phone-call.png'
 import '../../styles/contact.scss'
 import { useMediaQuery } from 'react-responsive';
-import { Navbar } from 'react-bootstrap';
+import Navbar from  "./../Navbars/Navbar";
 import BurgerNavbar from '../Navbars/burgerNavbar';
 import NavbarformobileFancysidebar from '../Navbars/NavbarformobileFancysidebar';
 
 export default function Card() {
-  const isWideScreen = useMediaQuery({ query: "(min-width: 768px)" });
+  const isWideScreen = useMediaQuery({ query: "(min-width: 769px)" });
   const isNarrowScreen = useMediaQuery({ query: "(max-width: 768px)" });
 
 
@@ -15,7 +15,7 @@ export default function Card() {
 
     <div>
 
-      {isWideScreen && <Navbar/>}
+        {isWideScreen && <Navbar/>}
         {isNarrowScreen && <BurgerNavbar />}
         
 

@@ -10,6 +10,9 @@ import Profile from "./components/Cards/Profile";
 import ContactCard from "./components/Cards/ContactCard";
 import Navbar from "react-bootstrap/esm/Navbar";
 import BurgerNavbar from "./components/Navbars/burgerNavbar";
+import PersonList from "./components/Cards/PersonList";
+import Tasks from "./components/Cards/Tasks";
+import DoneTasks from "./components/Cards/DoneTasks";
 
 function App() {
  
@@ -33,7 +36,11 @@ function App() {
           <Route path="/Profile" element={<Profile/>}/>
           <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/Contact" element={<ContactCard/>}/>
-          {/* <Route path="/Exit" element={<Login/>}/> */}
+          <Route path="/NewsCard" element={<NewsCard/>}/>
+          <Route path="/PersonList" element={<PersonList/>}/>
+          <Route path="/Tasks" element={<Tasks/>}/>
+          <Route path="/DoneTasks" element={<DoneTasks/>}/>
+          <Route path="/Exit" element={<Login/>}/>
 
         </Routes>
       </Router>
