@@ -7,6 +7,10 @@ body {
   background-color: #f2f2fd;
 }
 
+#newscardwholecontainer {
+  height: fit-content;
+}
+
 .container-fluid {
   padding-left: 0;
   padding-right: 0;
@@ -85,6 +89,8 @@ body {
 
 #TaskCard {
   flex-wrap: wrap;
+  flex-direction: column;
+  padding: 0;
 
   width: 100%;
   min-height: 400px;
@@ -100,6 +106,7 @@ body {
 
 #PersonsCard {
   flex-wrap: wrap;
+  flex-direction: column;
   width: 100%;
   min-height: 400px;
   height: 100%;
@@ -196,4 +203,15 @@ body {
   .container {
     flex-direction: column;
   }
+}
+
+#fancysidebarcolumn {
+  height: fit-content;
+}
+
+@media (max-width: 576px) {
+  #resizer{
+    flex-direction: column;
+  }
+  
 }

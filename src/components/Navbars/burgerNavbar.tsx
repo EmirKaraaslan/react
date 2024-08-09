@@ -16,7 +16,7 @@ const MyNavbar = () => {
             <Nav.Item>
               
                   <img src={exitLogo} style={{width:'20px' , height:'20px'}} alt="exitLogo"/>
-                  <a className="nav-link " id="exitburger" href="/Exit" >Exit</a>
+                  <a className="nav-link " id="exitburger" href="/" >Exit</a>
 
                 
             </Nav.Item>

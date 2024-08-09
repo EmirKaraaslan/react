@@ -1,394 +1,347 @@
-.header {
-    color: red;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 #bodylogin {
-    background-color: #d3bcf3;
-    height: 100vh;
-    padding: 0;
-    
-    width: 100%;
+  background-color: #d3bcf3;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
-
 
 .container-fluid {
-    margin: 0px;
-    padding: 0;
-    left: 0px;
-    top: 0;
-    // border: 2px solid aqua;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    height: 100vh;
+  min-height: 100vh;
+  display: flex;
+
+  margin: 0;
+  padding: 0;
+  left: 0px;
+  top: 0;
+  // border: 2px solid aqua;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  height: 100vh;
 }
 
-
-
-
 .row {
-
-    // border: 2px solid red;
-    /* 2px border, solid style, black color */
-    padding: 0px;
-    margin: 0;
-    justify-content: space-between;
-    box-sizing: border-box;
-
-
-
+  // border: 2px solid red;
+  /* 2px border, solid style, black color */
+  padding: 0px;
+  margin: 0;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 
 #rowGeneral {
-    left: 0;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
 }
-
 
 .col {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-
-
-
 #columnWholeCard {
+  // border: 2px solid aqua;
+  /* 2px border, solid style, black color */
+  padding: 5px;
+  margin: 3%;
+  margin-top: 10%;
+  margin-right: 5.333%;
+}
+
+@media (max-width: "576px") {
+  // Küçük ekran
+  #columnWholeCard {
     // border: 2px solid aqua;
     /* 2px border, solid style, black color */
     padding: 5px;
-    margin: 3%;
+
     margin-top: 10%;
-    margin-right: 5.333%;
-
-
-
+  }
 }
-
-
-@media (max-width:"576px") {
-
-    // Küçük ekran
-    #columnWholeCard {
-        // border: 2px solid aqua;
-        /* 2px border, solid style, black color */
-        padding: 5px;
-
-        margin-top: 10%;
-    }
-
-}
-
-
 
 #columnModel {
-    // border: 2px solid black;
-    /* 2px border, solid style, black color */
-    padding: 0;
-    margin: 0;
-
-
+  // border: 2px solid black;
+  /* 2px border, solid style, black color */
+  padding: 0;
+  margin: 0;
 }
 
 .container {
-
-    // border: 2px solid red;
-    /* 2px border, solid style, black color */
-    padding: 5px;
-    margin: 5px;
-    width: 100%;
-    box-sizing: border-box;
-
-
+  // border: 2px solid red;
+  /* 2px border, solid style, black color */
+  padding: 5px;
+  margin: 5px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 #greenModal {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
-
-
 
 #wholeBox {
-    margin-top: 200px;
-    justify-content: center;
+  margin-top: 200px;
+  justify-content: center;
 
-    // border: 2px solid blue;
-    // padding: 2px;
-    // margin: 2px;
-    // border-radius: 15px;
+  // border: 2px solid blue;
+  // padding: 2px;
+  // margin: 2px;
+  // border-radius: 15px;
 }
 
-
-
-
 #cardItselflogin {
-    width: auto;
-    max-width: 800px;
-    height: auto;
+  width: auto;
+  max-width: 800px;
+  height: auto;
 
+  background-color: "#fcf5f7";
+
+  border-radius: 10%;
+  /* Oval şekil için border-radius */
+  background-color: #fff;
+
+  //Bordering
+
+  // border: 2px solid blue;
+  // padding: 2px;
+  // margin: 2px;
+  // border-radius: 15px;
+}
+
+@media (max-width: "576px") {
+  // Küçük ekran
+  #cardItselflogin {
+    width: 400px;
+    max-width: 800px; // Maksimum genişlik
+    height: 421px;
 
     background-color: "#fcf5f7";
 
-
-    border-radius: 10%;
-    /* Oval şekil için border-radius */
-    background-color: #fff;
-
-
-
-    //Bordering
-
+    // border-radius: 15px;
+    // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
     // border: 2px solid blue;
     // padding: 2px;
     // margin: 2px;
     // border-radius: 15px;
-
+  }
 }
 
+@media (max-width: "768px") {
+  // orta ekran
+  #cardItselflogin {
+    width: 400px;
+    max-width: 800px; // Maksimum genişlik
+    height: 421px;
 
+    background-color: "#fcf5f7";
 
-@media (max-width:"576px") {
-
-    // Küçük ekran
-    #cardItselflogin {
-        width: 400px;
-        max-width: 800px; // Maksimum genişlik
-        height: 421px;
-
-
-
-        background-color: "#fcf5f7";
-
-        // border-radius: 15px;
-        // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
-        // border: 2px solid blue;
-        // padding: 2px;
-        // margin: 2px;
-        // border-radius: 15px;
-
-
-    }
-
+    // border-radius: 15px;
+    // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    // border: 2px solid blue;
+    // padding: 2px;
+    // margin: 2px;
+    // border-radius: 15px;
+  }
 }
 
-@media (max-width:"768px") {
+@media (min-width: "992px") {
+  // orta ekran
+  #cardItselflogin {
+    width: 400px;
+    max-width: 800px; // Maksimum genişlik
+    height: 421px;
 
-    // orta ekran
-    #cardItselflogin {
-        width: 400px;
-        max-width: 800px; // Maksimum genişlik
-        height: 421px;
+    background-color: "#fcf5f7";
 
-
-
-        background-color: "#fcf5f7";
-
-        // border-radius: 15px;
-        // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
-        // border: 2px solid blue;
-        // padding: 2px;
-        // margin: 2px;
-        // border-radius: 15px;
-
-
-    }
-
-}
-
-
-
-@media (min-width:"992px") {
-
-    // orta ekran
-    #cardItselflogin {
-        width: 400px;
-        max-width: 800px; // Maksimum genişlik
-        height: 421px;
-
-
-
-        background-color: "#fcf5f7";
-
-        // border-radius: 15px;
-        // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
-        // border: 2px solid blue;
-        // padding: 2px;
-        // margin: 2px;
-        // border-radius: 15px;
-
-
-    }
-
+    // border-radius: 15px;
+    // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    // border: 2px solid blue;
+    // padding: 2px;
+    // margin: 2px;
+    // border-radius: 15px;
+  }
 }
 
 #columnInnerContainer {
-    // border: 2px solid red;
-    /* 2px border, solid style, black color */
-    padding: 0px;
-    margin: 0px;
-    height: auto;
-
-
-
-
+  // border: 2px solid red;
+  /* 2px border, solid style, black color */
+  padding: 0px;
+  margin: 0px;
+  height: auto;
 }
 
-
-
-
 .topHeader {
-    font-family: Mohave;
-    font-size: 45px;
-    font-weight: 500;
-    line-height: 62.69px;
-    text-align: center;
-
+  font-family: Mohave;
+  font-size: 45px;
+  font-weight: 500;
+  line-height: 62.69px;
+  text-align: center;
 }
 
 #welcome {
-    font-family: Mohave;
-    font-size: 45px;
-    font-weight: 500;
-    line-height: 62.69px;
-    text-align: center;
-    color: #B1E457;
-    margin: 0;
-
+  font-family: Mohave;
+  font-size: 45px;
+  font-weight: 500;
+  line-height: 62.69px;
+  text-align: center;
+  color: #b1e457;
+  margin: 0;
 }
-
 
 #cardbodylogin {
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
-
 #password {
-    width: 100%;
-    height: 45px;
-    margin-top: 30px;
+  width: 100%;
+  height: 45px;
+  margin-top: 30px;
 
-
-    border-radius: 20px;
-    /* Oval köşeler */
-    padding: 4px;
-    /* İçerik ile kenar arasında boşluk */
-    border: 1px solid #6c727f;
-    /* Kenar rengi */
-    background-color: #6c727f;
+  border-radius: 20px;
+  /* Oval köşeler */
+  padding: 4px;
+  /* İçerik ile kenar arasında boşluk */
+  border: 1px solid #6c727f;
+  /* Kenar rengi */
+  background-color: #6c727f;
 }
 
 #passwordCol {
-    width: 100%;
+  width: 100%;
 }
 
 #password::placeholder {
-    color: #C4C4C4;
-    font-family: Mohave;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 27.86px;
-    text-align: left;
-    padding-left: 50px;
+  color: #c4c4c4;
+  font-family: Mohave;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27.86px;
+  text-align: left;
+  padding-left: 50px;
 }
 
-
 #emaillogin {
-    width: 100%;
-    height: 45px;
+  width: 100%;
+  height: 45px;
 
-    border-radius: 20px;
+  border-radius: 20px;
 
-    /* Oval köşeler */
-    padding: 4px;
-    /* İçerik ile kenar arasında boşluk */
-    border: 1px solid #6c727f;
-    /* Kenar rengi */
-    background-color: #6c727f;
+  /* Oval köşeler */
+  padding: 4px;
+  /* İçerik ile kenar arasında boşluk */
+  border: 1px solid #6c727f;
+  /* Kenar rengi */
+  background-color: #6c727f;
 
-    background-image: url(https://www.figma.com/design/A6b5SpZjKvH3sjYM8A9LME/MyWorks?node-id=1-94&t=kTTdscir2RZOFC2C-4)
+  background-image: url(https://www.figma.com/design/A6b5SpZjKvH3sjYM8A9LME/MyWorks?node-id=1-94&t=kTTdscir2RZOFC2C-4);
 }
 
 #emailCol {
-    width: 100%;
+  width: 100%;
 }
 
 #emaillogin::placeholder {
-    font-family: Mohave;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 27.86px;
-    text-align: left;
-    padding-left: 50px;
-    color: #C4C4C4;
-
-
+  font-family: Mohave;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27.86px;
+  text-align: left;
+  padding-left: 50px;
+  color: #c4c4c4;
 }
 
 #emailIcon {
-    margin-top: 20px;
-
-
+  margin-top: 20px;
 }
 
 .btn {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 
-    border-radius: 20px;
-    margin: 0;
-    margin-top: 70px;
-    background-color: #B1E457
+  border-radius: 20px;
+  margin: 0;
+  margin-top: 70px;
+  background-color: #b1e457;
 }
 
 .btn:hover {
-    background-color: #A15FF4;
+  background-color: #a15ff4;
 }
 
 #welcome {
-    font-family: Mohave;
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 41.79px;
-    text-align: center;
-    margin-top: 20px;
-
+  font-family: Mohave;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 41.79px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 #donthaveanaccount {
-    font-family: Mohave;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 25.07px;
-    text-align: center;
-    color: #fff;
-    margin: 0;
-
+  font-family: Mohave;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25.07px;
+  text-align: center;
+  color: #fff;
+  margin: 0;
 }
 
 #signup {
-    font-family: Mohave;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 25.07px;
-    text-align: center;
-    color: #58820E;
-
-
-
+  font-family: Mohave;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25.07px;
+  text-align: center;
+  color: #58820e;
 }
 
 #forgotpassword {
-    font-family: Mohave;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 25.07px;
-    text-align: center;
-    color: #58820E;
-    margin-top: 0%;
+  font-family: Mohave;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25.07px;
+  text-align: center;
+  color: #58820e;
+  margin-top: 0%;
+}
+
+#loginfailallertcol {
+  width: 100%;
+  height: 45px;
+  margin-bottom: 20px;
+
+  border-radius: 20px;
+
+  /* Oval köşeler */
+  padding: 4px;
+  /* İçerik ile kenar arasında boşluk */
+  border: 1px solid #6c727f;
+  /* Kenar rengi */
+  background: rgba(174, 45, 93, 1);
+  justify-content: center;
+}
+
+#loginfailallertmessage {
+  font-family: Mohave;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27.86px;
+  text-align: left;
+  color: white;
+  text-align: center;
+  
+  
 }

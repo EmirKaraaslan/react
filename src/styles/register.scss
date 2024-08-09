@@ -53,7 +53,7 @@ body {
 
 
 
-#columnWholeCard {
+#columnWholeCardregister {
   // border: 2px solid aqua;
   /* 2px border, solid style, black color */
   padding: 5px;
@@ -69,7 +69,7 @@ body {
 @media (max-width:"576px") {
 
   // Küçük ekran
-  #columnWholeCard {
+  #columnWholeCardregister {
       // border: 2px solid aqua;
       /* 2px border, solid style, black color */
       padding: 5px;
@@ -122,7 +122,7 @@ body {
 
 
 
-#cardItself {
+#cardItselfregister {
   width: auto;
   max-width: 800px;
   height: auto;
@@ -151,7 +151,7 @@ body {
 @media (max-width:"576px") {
 
   // Küçük ekran
-  #cardItself {
+  #cardItselfregister {
       width: 400px;
       max-width: 800px; // Maksimum genişlik
       height: auto;
@@ -175,7 +175,7 @@ body {
 @media (max-width:"768px") {
 
   // orta ekran
-  #cardItself {
+  #cardItselfregister {
       width: 400px;
       max-width: 800px; // Maksimum genişlik
       height: auto;
@@ -201,7 +201,7 @@ body {
 @media (min-width:"992px") {
 
   // orta ekran
-  #cardItself {
+  #cardItselfregister {
       width: 400px;
       max-width: 800px; // Maksimum genişlik
       height: auto;
@@ -264,7 +264,7 @@ body {
 }
 
 
-#name {
+#nameregister {
   width: 100%;
   height: 45px;
 
@@ -286,7 +286,7 @@ body {
   width: 100%;
 }
 
-#name::placeholder {
+#nameregister::placeholder {
   font-family: Mohave;
   font-size: 20px;
   font-weight: 400;
@@ -303,7 +303,7 @@ body {
 ////////////// 
  
 
-#email {
+#emailregisiter {
   width: 100%;
   height: 45px;
 
@@ -325,7 +325,7 @@ body {
   width: 100%;
 }
 
-#email::placeholder {
+#emailregisiter::placeholder {
   font-family: Mohave;
   font-size: 20px;
   font-weight: 400;
@@ -454,4 +454,26 @@ body {
   text-align: center;
   color: #58820E;
   margin-top: 0%;
+}
+
+#registerfailallertmessageUserAlreadyExsist {
+  font-family: Mohave;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27.86px;
+  text-align: left;
+  color: white;
+  text-align: center;
+  height: 40px;
+  
+}
+
+#registerFailallertmessagePasswordsNotMatch {
+  font-family: Mohave;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27.86px;
+  text-align: left;
+  color: white;
+  text-align: center;
 }

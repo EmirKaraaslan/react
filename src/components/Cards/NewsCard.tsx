@@ -1,20 +1,105 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import FancySidebar from "./../fancySidebar";
 import NavbarwithSearch from "../Navbars/NavbarwithSearch";
 import { Card, CardGroup, Col, Container, Row } from "react-bootstrap";
 import { useMediaQuery } from "react-responsive";
 import NavbarformobileFancysidebar from "../Navbars/NavbarformobileFancysidebar";
 import "./../../styles/NewsCard.scss";
+import { error } from "console";
+import { setSelectionRange } from "@testing-library/user-event/dist/utils";
 
-const News = () => {
+/**
+ *
+ * * öncelikle postmana atacağımız get in dönüşünde alacağımız veriye uygun
+ * bir veri tipi oluşturmamız  gerekiyor  bunu başka bir dosyada interface
+ * olarak yazdım "news.tsx" içinde  bunu buraya newsItem olarak import ettim
+ *
+ * ve news olarak kullandığım objenin bu tipte olduğunu alttaki satırda gösterdim
+ */
+
+interface NewsItem {
+  author: string;
+  content: string;
+  description: string;
+  publishedAt: string;
+  source: {
+    id: null | number | string;
+  };
+  title: string;
+  url: string;
+  urlToImage: string;
+}
+
+interface ApiResponse {
+  articles: NewsItem[];
+}
+
+console.log("geldim");
+
+const News: React.FC = () => {
   const isWideScreen = useMediaQuery({ query: "(min-width: 1024px)" });
   const isTablet = useMediaQuery({
     query: "(min-width: 768px) and (max-width: 1024px)",
   });
   const isSmallScreen = useMediaQuery({ query: "(max-width: 767px)" });
-  const isMediumScreen = useMediaQuery({
-    query: "(min-width: 480px) and (max-width: 767px)",
-  });
+
+  //Postman den haber çekme
+
+  /**
+   * öncelikle postmana atacağımız get in dönüşünde alacağımız veriye uygun
+   * bir veri tipi oluşturmamız  gerekiyor  bunu başka bir dosyada interface
+   * olarak yazdım "news.tsx" içinde
+   *
+   * bu notada bir state yaratacağız iki paametresi olacak
+   * ilki gelen ham veriyi tutacak ikincisi de gelen veriyi setlemek için kullanılacak
+   *
+   */
+
+  /**
+   * Use State Hook 'u nedir?
+   *
+   *
+   * state yani durum yönetimi için kullanılır
+   *
+   * DURUM DEĞİŞKENİ(1.)
+   * ilk tip (selectedNews) bileşenin güncel durumunu saklar
+   *  bu örnekte tip olarak NewsItem ve null olabilir(çünkü array içinde seçim
+   * yapmak için açtığımız için null ' u göz arda edemeyiz)
+   * initial stat'de bir şey vermedik ve null dedik
+   *
+   * DURUM GÜNCELLEYİCİ FONKSİYON(2.)
+   * ikinci tip birinci tipi yani durum değişkenini güncellemek
+   * için kullanılır bu fonksiyon çağırıldığında durum güncellenir ve
+   * komponent tekrardan render edilir
+   *
+   *
+   */
+  const [selectedNews1, setSelectedNews1] = useState<NewsItem | null>(null);
+  const [selectedNews2, setSelectedNews2] = useState<NewsItem | null>(null);
+  const [selectedNews3, setSelectedNews3] = useState<NewsItem | null>(null);
+  const [selectedNew4, setSelectedNews4] = useState<NewsItem | null>(null);
+
+  /**
+   * gelen veriyi çekmek , çözümlemek/açmak (fetch)
+   * ve gelen veriyi defacto standart olan json tipine dönüştürmek için
+   * bir fonkison yazıyoruz (bu tür veri çekme (db de dahil) işleri için
+   * her zaman bir error catch yazıyoruz)
+   */
+
+  useEffect(() => {
+    fetch(
+      "https://newsapi.org/v2/everything?q=bjk&apiKey=e67f8d97a6ec44b482a9dc5c02742d7a"
+    )
+      .then((response) => response.json())
+      .then((data: ApiResponse) => {
+        console.log("Fetched data : ", data);
+        setSelectedNews1(data.articles[41]);
+        setSelectedNews2(data.articles[19]);
+        setSelectedNews3(data.articles[39]);
+        setSelectedNews4(data.articles[24]);
+      })
+      .catch((error) => console.log("Error fetching news faild cause:", error));
+  }, []);
 
   return (
     <div>
@@ -25,12 +110,9 @@ const News = () => {
         rel="stylesheet"
       />
       <Container fluid>
-        <div
-          className="row"
-          style={{  justifyContent: "center" }}
-        >
+        <div className="row"  id="newscardwholecontainer" style={{ justifyContent: "center" }}>
           <div
-            className="col col-md-3"
+            className="col col-md-3" id="fancysidebarcolumn"
             style={{
               width: "auto",
               padding: "0px",
@@ -58,6 +140,8 @@ const News = () => {
               style={{
                 padding: "0px",
                 justifyContent: "center",
+                width:"100%",
+                // border:"2px solid red"
               }}
             >
               {isWideScreen && <NavbarwithSearch />}
@@ -77,75 +161,116 @@ const News = () => {
                   <Row>
                     <h3 id="hottopics">Hot Topics</h3>
                   </Row>
-                  <Row>
-                    <img
-                      src="https://s3-alpha-sig.figma.com/img/c135/07ee/72a692f482624d3fa5e8a9100c1f5a55?Expires=1724025600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=f~f70R8RpHk08ZVZLg9FOM5nC5-URCNPwnhXO4mvD~kRqCH0lJ7Fkl-Cd-TQ3ssynKYa~K2smI2SRcJFVVa6pkOJfcpOM9eYGpdShiIQw~5-LV9rLixmhiWFspJ15CksoPqVpw4-5OxfKdQSH1KuqxP3DL5pvQCrbmZt7ZlNN1w60DmjwpMntQYROj6KPrwFjuUeP87OCAsps25q99UB4wlOEKGWznugvsc6yPgLKNmfcxTKw-KafFUCl5tgNCurjAF-V-0lT4z7A7xdcuUcLJ8rdBYBjxgmmmSTUZd89DiwtdLXPmSVuce8MkVm7tufke9dHR4OpgczL0zn6sVyHw__"
-                      style={{
-                        objectFit: "cover",
-                        height: "200px",
-                        borderRadius: "20px",
-                      }}
-                    />
-                  </Row>
+
+                  {selectedNews1 ? (
+
+                    
+                    
+                    <div style={{ position: "relative" }}>
+                      <h4 id="newtitle" >{selectedNews1.title} 
+
+                        
+                      </h4>
+                      <img
+                        src={selectedNews1.urlToImage}
+                        style={{
+                          objectFit: "cover",
+                          height: "300px",
+                          width: "100%",
+                          borderRadius: "20px",
+                          
+                        }}
+                        alt={selectedNews1.title}
+                      />
+                      <div
+                        style={{
+                          position:"absolute",
+                          bottom: "0",
+                          left: "0",
+                          right: "0",
+                          background:"transparent",
+                          color: "white",
+                          
+                        }}
+                      >
+                        
+                        <p id="newsdescription">{selectedNews1.content}</p>
+                      </div>
+                    </div>
+                  ) : (
+                    <p>No news exists</p>
+                  )}
+
+                  {selectedNews2 && selectedNews3 && selectedNew4  ? ( 
 
                   <Row>
                     <h3 id="latestnews">Latest News</h3>
                     <CardGroup id="cardgroup">
                       <Card id="triplecard" style={{ marginRight: "40px" }}>
                         <Card.Img
-                          src="https://s3-alpha-sig.figma.com/img/ec3c/803e/f50679911c8d5f88354ce492d1a3d0f1?Expires=1724025600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=XbfRPgPqBsxONdzOc9u4~O4la5xBj-hhyWLwgwCs68oL3ykurMv3RgGq5sCz93A5VA2iDkHsV1RPzNkIs1bzP1Ds3-cpK1QXCtKUqStr8c0PoqJOlvBYEm-GBSo9IoM89Dgs-MPNnZztUlAn9K0KgVYcP6gmo3EJl7Dr2tgX3D~ZJ7eZnzAm8bynRe8-M3WDImvs8ZX7fheW8gqFHgaKXIRTTTdsMCYQKhqDoKHGpF3tcbt-fw3t4lrPEfkArGqIgBjtopoPSzvebzQSD5MJfmTVpYlCTJbhWguQnl7br28-tYc9YF~EQ6ScBbjoA5e7edrYs1FnGxAB3bwTrtUcBQ__"
+                          src={selectedNews2.urlToImage}
                           style={{ objectFit: "cover", height: "150px" }}
                         />
                         <Card.Body>
                           <Card.Title id="cardtitle">
-                            News Title Lorem Ipsum
+                            {selectedNews2.title}
                           </Card.Title>
                         </Card.Body>
                       </Card>
                       <Card id="triplecard" style={{ marginRight: "40px" }}>
                         <Card.Img
-                          src="https://s3-alpha-sig.figma.com/img/f81c/7ff0/b1ac69e4af5f4897efc992e15f3c534f?Expires=1724025600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=WG7Yl0xR8kL8gDLxaoOWDe3MsfbuKm5xv3pI-Yo9NNYNASaVKDodaZuxUsADDmYCfgmGKAmJRwYycaFiEcvOXuPRYcd-LBAI-eAbdzPwP8j8CaoohboqePjWimBqIHUz6SF8ENNUJ4B8YjN4Y735DSul2JElUeJwTYRtwBLouYjJM6rs8XD82W~~Kwd85VG2A9gxm3783u1gvl0pyfDWUtBjnuiI2K49TTSQXaQAs68zGj5o-xiSI3IGz7SQogUx99J6VbGKBT1sRu6lhf0pEcGt2IzXDGejohjpXTf8t1JWD0b-A~xSInhNnlSB1L5juxr~97wM8RkOkAQGhl0wIg__"
+                          src={selectedNews3.urlToImage}
                           style={{ objectFit: "cover", height: "150px" }}
                         />
                         <Card.Body>
                           <Card.Title id="cardtitle">
-                            News Title Lorem Ipsum
+                            {selectedNews3.title}
                           </Card.Title>
                         </Card.Body>
                       </Card>
                       <Card id="triplecard">
                         <Card.Img
-                          src="https://s3-alpha-sig.figma.com/img/41f8/42a8/d233417bdc89c29b126daeb91e63ee2a?Expires=1724025600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=FdHtwBDgJwtOkllmpaLCrant~EctWfxPw48~WfQqo7ufqDVauC8YNIz7mRNnrjdEHgQ-~ARYooWY6R2MWI-H3TycDtzLc~-0H0Wsumce573vnMN66~wDYtI6V5k-JYaO-~sftuFLFlrjDA4ASZwrg33ffq0hQonoNItPfsrKsDb7SHPFhmZBBWLd1PlUcYdQdWzcRkYIQXZLbc9~IRzOmV05S73bh4qEorRyheo1N772Cq4rucg4c4rIlvxXeCymJp~dbBIRY~IhxqDUAg~UY9DxPtzTM97H8X835ng2Al5LxZaiDhWsIfbneFgNpa4Z4NRllY68LwK4quNwNem-Hw__"
+                          src={selectedNew4.urlToImage}
                           style={{ objectFit: "cover", height: "150px" }}
                         />
                         <Card.Body>
                           <Card.Title id="cardtitle">
-                            News Title Lorem Ipsum
+                            {selectedNew4.title}
                           </Card.Title>
                         </Card.Body>
                       </Card>
                     </CardGroup>
                   </Row>
+                  ) 
+                  : (
+                    <p>No news exsist</p>
+                  )
+
+                  
+                                  
+
+}
                 </Card.Body>
               </Card>
             </div>
 
             <div
-              className="row"
+              className="row "
               style={{
                 // border: "2px solid aqua",
                 marginTop: "4%",
+                width:"auto",
                 justifyContent: "center",
               }}
             >
               <div
-
                 id="resizer"
                 style={{
                   display: "flex",
                   flexDirection: "row",
-                  flexWrap:"wrap",
+                  flexWrap: "wrap",
                   
+
                   gap: "1rem",
                 }}
               >
@@ -158,81 +283,73 @@ const News = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <Container  id="TaskCard">
-                  <Row md={8}>
-                    <Row id="line">
-                      <p>
-                        -----------------------------------------------------
-                      </p>
-                    </Row>
-                    <Row id="taskattributes">
-                      <Col>
-                        <p>Task Title</p>
-                      </Col>
-                      <Col>
-                        <p>Task Description</p>
-                      </Col>
-                      <Col>
-                        <p>Status</p>
-                      </Col>
-                    </Row>
-                    <Row id="line">
-                      <p>
-                      -----------------------------------------------------
-                      </p>
-                    </Row>
-                    <Row id="taskproperties">
-                      <Col>
-                        <p>Home Page Redesign</p>
-                      </Col>
-                      <Col>
-                        <p>Lorem Ipsum dollars</p>
-                      </Col>
-                      <Col>
-                        <p style={{ color: "rgba(33, 150, 83, 1)" }}>
-                          {" "}
-                          * In Progress
+                  <Container id="TaskCard">
+                    <Row md={8}>
+                      <Row id="line">
+                        <p>
+                          -----------------------------------------------------
                         </p>
-                      </Col>
+                      </Row>
+                      <Row id="taskattributes">
+                        <Col>
+                          <p>Task Title</p>
+                        </Col>
+                        <Col>
+                          <p>Task Description</p>
+                        </Col>
+                        <Col>
+                          <p>Status</p>
+                        </Col>
+                      </Row>
+                      <Row id="line">
+                        <p>
+                          -----------------------------------------------------
+                        </p>
+                      </Row>
+                      <Row id="taskproperties">
+                        <Col>
+                          <p>Home Page Redesign</p>
+                        </Col>
+                        <Col>
+                          <p>Lorem Ipsum dollars</p>
+                        </Col>
+                        <Col>
+                          <p style={{ color: "rgba(33, 150, 83, 1)" }}>
+                            {" "}
+                            * In Progress
+                          </p>
+                        </Col>
+                      </Row>
                     </Row>
-                  </Row>
                   </Container>
-                </div>
-                <div
-                  className="col"
-                  style={{
-                    //// sizing problem
-
-                    // border: "2px solid green",
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                >
+                
+               
                   <Container id="PersonsCard">
-                  <Row md={12}>
-                    <Row id="line">
-                      <p>
-                      -----------------------------------------------------
-                      </p>
+                    <Row md={12}>
+                      <Row id="line">
+                        <p>
+                          -----------------------------------------------------
+                        </p>
+                      </Row>
+                      <Row id="personTitle" style={{ textAlign: "left" }}>
+                        <p>Persons</p>
+                      </Row>
+                      <Row id="line">
+                        <p>
+                          -----------------------------------------------------
+                        </p>
+                      </Row>
+                      <Row id="personName" style={{ textAlign: "left" }}>
+                        <p>Cüneyt</p>
+                        <p>Bayram</p>
+                        <p>Ali</p>
+                        <p>Gökhan</p>
+                        <p>Yahya</p>
+                      </Row>
                     </Row>
-                    <Row id="personTitle" style={{ textAlign: "left" }}>
-                      <p>Persons</p>
-                    </Row>
-                    <Row id="line">
-                      <p>
-                      -----------------------------------------------------
-                      </p>
-                    </Row>
-                    <Row id="personName" style={{ textAlign: "left" }}>
-                      <p>Cüneyt</p>
-                      <p>Bayram</p>
-                      <p>Ali</p>
-                      <p>Gökhan</p>
-                      <p>Yahya</p>
-                    </Row>
-                  </Row>
                   </Container>
-                </div>
+                  </div>
+                
               </div>
             </div>
           </div>

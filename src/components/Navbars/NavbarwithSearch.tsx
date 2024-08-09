@@ -63,7 +63,7 @@ export default function NavbarwithSearch() {
                   />
                 </Col>
                 <Col >
-                  <Nav.Link href="/Exit" id="Exit" >Exit</Nav.Link>
+                  <Nav.Link href="/" id="Exit" >Exit</Nav.Link>
                 </Col>
               </Row>
             </Container>

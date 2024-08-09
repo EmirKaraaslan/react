@@ -28,7 +28,7 @@ export default function Navbar() {
                       <img src={exitlogo} className='nav-icon' ></img>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link " id="exit" href="/Exit" >Exit</a>
+                      <a className="nav-link " id="exit" href="/" >Exit</a>
                     </li>
                   </div>
                 </div>

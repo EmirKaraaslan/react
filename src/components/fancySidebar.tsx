@@ -233,6 +233,7 @@ const FancySidebar = () => {
           >
             {/* Person List */}
             <svg
+             onClick={handleClickPerosnlist}
               width="200"
               height="50"
               viewBox="0 0 231 52"
@@ -251,7 +252,7 @@ const FancySidebar = () => {
           </li>
         </ul>
         <div className="container mx-auto my-4">
-          <div className="row ">
+          <div className="row align-items-baseline" style={{ }}>
             <div className="col-md-4" style={{ width: "auto", height: "auto" }}>
               <svg
                 href="gfgsdfg"

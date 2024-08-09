@@ -1,17 +1,95 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../styles/login.scss";
 import phoneIcon from "../pngandicons/phone-call.png";
+import { auth } from "../firebase/firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+/**
+ * const Login = () => { ... }
+ *
+ * kısmının başına React.FC ekledim (React.FunctionComponent)
+ * bu şekilde bir bileşeninn props'larını tanımlayarak TypeScript'in
+ * tür denetimin kullanmamızı sağlar ve hataları compaile time ' da
+ * catch leyebiliriz.
+ *
+ */
+
+const Login: React.FC = () => {
+  /**
+   * postmandeki gibi bir backend işi varsa aklımıza ilk gelmesi gereken
+   * EN TEMEL BACKEND İŞİ
+   * Stateler olmalı , kullanıcının girdisini almak ve bunu saklamak için
+   * her girdi için 2 şer (1. state , 2. state ) olarak useState(); ile
+   * state belirleriz.
+   */
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState<string | null>(null);
+
+  // login doğruysa useNavigate() fonksiyonunu kullnamak için bunu tanımlıyorum
+  const navigate = useNavigate();
+
+  /**
+   * yanlışsa card ' ın içine farklı
+   * bir component eklemk istediğim için bunu öncelikle
+   * backend ' de işartelemeliyim  ve html içinde bu işaret böyleyse bunu
+   * yap demek için bir işaretleyici yaratmam lazım bunu da bir tip
+   * state olarak oluşturacağım
+   */
+
+  const [loginSuccess, setLoginSuccess] = useState<boolean | null>();
+
+  /**
+   * HandleLogin fonksiyonu
+   * firebase in kendi fonksiyonunu kullanmamız için hazırlamamız
+   * gereken bir fonksiyon yapısı  ASYNC bir fonksyiondur
+   *
+   * Async Function : işlemleri asenkron yapmamızı sağlar ve yaygın
+   * olarak  "await"
+   * keywordu ile kullanılır genelde API çağrılarını çekmek için
+   * async function lar tercih edilir çünkü bir işlem gerçekleşirken
+   * arka planda farklı bir iş gerçekleşeceği için asenkron bir işlem.
+   */
+
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoginSuccess(null);
+
+    try {
+      // firebase in kendi fonksiyonu
+      await signInWithEmailAndPassword(auth, email, password);
+      // giriş doğruysa
+      console.log("Login successful");
+      setLoginSuccess(true);
+
+      // buraya yönledirir
+      navigate("/NewsCard");
+    } catch (error) {
+      console.log("Error: ", error);
+      setError((error as Error).message);
+
+      // gitiş hatalıysa loginSuccess i false a setliyor
+      setLoginSuccess(false);
+    }
+  };
+
   return (
     <div>
+      <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0"
+        ></meta>
+      </head>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link
         href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:wght@100..900&family=Mohave:ital,wght@0,300..700;1,300..700&display=swap"
         rel="stylesheet"
       ></link>
-      <body id="bodylogin" style={{height:"100vh"}}>
+      <body id="bodylogin" style={{ height: "100vh" }}>
         <div className="container-fluid">
           <div className="row" id="rowGeneral">
             <div className="col-md-1" id="columnModel">
@@ -61,32 +139,44 @@ const Login = () => {
                     Sign in to your account
                   </p>
 
-                  <div className="card-body d-flex flex-column" id="cardbodylogin">
+                  <div
+                    className="card-body d-flex flex-column"
+                    id="cardbodylogin"
+                  >
                     <div className="container d-flex flex-column">
                       <div className="row" id="row">
+                        {loginSuccess === null && (
+                          <p></p>
+                        ) }
+                        {loginSuccess === false && (
+                          <div className="loginfailallert" >
+                            <div className="col-md-9" id="loginfailallertcol">
+                              <p id="loginfailallertmessage">Incorrect username or password!</p>
+                            </div>
+                          </div>
+                        )}
+                        
                         <div className="col-md-9" id="emailCol">
                           <div className="form-outline">
-                            <form action="submit" method="post">
-                              
+                            <form onSubmit={handleLogin}>
                               <input
                                 type="email"
                                 id="emaillogin"
                                 name="email"
                                 placeholder="Email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                               />
+                            
 
-                              
-                            </form>
-                          </div>
-                        </div>
-
-                        <div className="col-md-10" id="passwordCol">
-                          <form action="submit" method="post">
+                            
                             <input
                               type="password"
                               id="password"
                               name="Password"
                               placeholder="Password"
+                              value={password}
+                              onChange={(e) => setPassword(e.target.value)}
                               style={{
                                 borderColor: "#dfdbdf",
                                 borderStyle: "groove",
@@ -94,11 +184,9 @@ const Login = () => {
                                 marginLeft: "0px",
                               }}
                             ></input>
-                          </form>
-                        </div>
 
-                        <button
-                          type="submit"
+<button
+                           type="submit"
                           className="btn "
                           id="send-button"
                           style={{
@@ -112,6 +200,15 @@ const Login = () => {
                         >
                           Login
                         </button>
+                          </form>
+                          </div>
+                        </div>
+
+                        
+                         
+                       
+
+                       
                       </div>
                     </div>
                   </div>
@@ -119,7 +216,10 @@ const Login = () => {
               </div>
               <div className="columnlogin" style={{ margin: "0" }}>
                 <p id="donthaveanaccount">
-                  Don't have an account?<span id="signup">Sign Up</span>
+                  Don't have an account?
+                  <span id="signup">
+                    <a href="/Register" style={{color:"rgba(88,130,14,1)"}}>Sign Up</a>
+                  </span>
                 </p>
                 <p id="forgotpassword">Forgot password?</p>
               </div>
@@ -132,3 +232,6 @@ const Login = () => {
 };
 
 export default Login;
+function push(arg0: string) {
+  throw new Error("Function not implemented.");
+}

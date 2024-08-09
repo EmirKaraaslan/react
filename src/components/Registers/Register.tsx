@@ -1,8 +1,90 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../styles/register.scss";
 import phoneIcon from "../pngandicons/phone-call.png";
+import { auth } from "../firebase/firebase";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+/**
+ * const Login = () => { ... }
+ *
+ * kısmının başına React.FC ekledim (React.FunctionComponent)
+ * bu şekilde bir bileşeninn props'larını tanımlayarak TypeScript'in
+ * tür denetimin kullanmamızı sağlar ve hataları compaile time ' da
+ * catch leyebiliriz.
+ *
+ */
+
+const Register: React.FC = () => {
+  /**
+   * postmandeki gibi bir backend işi varsa aklımıza ilk gelmesi gereken
+   * EN TEMEL BACKEND İŞİ
+   * Stateler olmalı , kullanıcının girdisini almak ve bunu saklamak için
+   * her girdi için 2 şer (1. state , 2. state ) olarak useState(); ile
+   * state belirleriz.
+   */
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmpassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState<string | null>(null);
+
+  // login doğruysa useNavigate() fonksiyonunu kullnamak için bunu tanımlıyorum
+  const navigate = useNavigate();
+  
+  
+  
+
+  /**
+   * yanlışsa card ' ın içine farklı
+   * bir component eklemk istediğim için bunu öncelikle
+   * backend ' de işartelemeliyim  ve html içinde bu işaret böyleyse bunu
+   * yap demek için bir işaretleyici yaratmam lazım bunu da bir tip
+   * state olarak oluşturacağım
+   */
+
+  const [registerSuccess, setRegisterSuccess] = useState<boolean | null>(null);
+
+  /**
+   * HandleLogin fonksiyonu
+   * firebase in kendi fonksiyonunu kullanmamız için hazırlamamız
+   * gereken bir fonksiyon yapısı  ASYNC bir fonksyiondur
+   *
+   * Async Function : işlemleri asenkron yapmamızı sağlar ve yaygın
+   * olarak  "await"
+   * keywordu ile kullanılır genelde API çağrılarını çekmek için
+   * async function lar tercih edilir çünkü bir işlem gerçekleşirken
+   * arka planda farklı bir iş gerçekleşeceği için asenkron bir işlem.
+   */
+
+  const handleRegister = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setRegisterSuccess(null);
+
+    try {
+      // firebase in kendi fonksiyonu
+      await createUserWithEmailAndPassword(auth, email, password);
+
+      // giriş doğruysa
+      console.log("Login successful");
+      setRegisterSuccess(true);
+      navigate("/NewsCard");
+
+      // buraya yönledirir
+      navigate("/AboutUs");
+    } catch (error) {
+      console.log("Error: ", error);
+      setError((error as Error).message);
+
+      // gitiş hatalıysa loginSuccess i false a setliyor
+      setRegisterSuccess(false);
+    }
+  };
+
   return (
     <div>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,7 +118,7 @@ const Login = () => {
               </div>
             </div>
 
-            <div className="col-md-10" id="columnWholeCard">
+            <div className="col-md-10" id="columnWholeCardregister">
               <div id="columnInnerContainer">
                 <h1
                   className="topHeader"
@@ -46,7 +128,7 @@ const Login = () => {
                 </h1>
                 <div
                   className="card mx-auto my-5"
-                  id="cardItself"
+                  id="cardItselfregister"
                   style={{ backgroundColor: "#212936" }}
                 >
                   <p id="welcome">Create a MyWork Account</p>
@@ -54,29 +136,41 @@ const Login = () => {
                   <div className="card-body d-flex flex-column">
                     <div className="container d-flex flex-column">
                       <div className="row" id="row">
-                        <div className="col-md-9" id="nameCol">
-                          <input
-                            type="name"
-                            id="name"
-                            name="name"
-                            placeholder=" Your name"
-                            style={{
-                              borderColor: "#dfdbdf",
-                              borderStyle: "groove",
-                              textAlign: "left",
-                              border: "0px solid #ccc",
-                            }}
-                          />
-                        </div>
-
                         <div className="col-md-9" id="emailCol">
                           <div className="form-outline">
-                            <form action="submit" method="post">
+                            {registerSuccess === false && (
+                              <div className="loginfailallert">
+                                <div
+                                  className="col-md-9"
+                                  id="loginfailallertcol"
+                                >
+                                  <p id="registerfailallertmessageUserAlreadyExsist">
+                                    User Already Exsist !
+                                  </p>
+                                </div>
+                              </div>
+                            )}
+
+                            {password != confirmpassword && (
+                              <div className="loginfailallert">
+                                <div
+                                  className="col-md-9"
+                                  id="loginfailallertcol"
+                                >
+                                  <p id="registerFailallertmessagePasswordsNotMatch">
+                                    Passwords are not match
+                                  </p>
+                                </div>
+                              </div>
+                            )}
+                            <form onSubmit={handleRegister}>
                               <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="Your Email"
+                                type="name"
+                                id="nameregister"
+                                name="name"
+                                placeholder=" Your name"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
                                 style={{
                                   borderColor: "#dfdbdf",
                                   borderStyle: "groove",
@@ -84,61 +178,74 @@ const Login = () => {
                                   border: "0px solid #ccc",
                                 }}
                               />
+
+                              <input
+                                type="email"
+                                id="emailregisiter"
+                                name="email"
+                                placeholder=" Your Email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                style={{
+                                  borderColor: "#dfdbdf",
+                                  borderStyle: "groove",
+                                  border: "0px solid #ccc",
+                                  marginLeft: "0px",
+                                }}
+                              ></input>
+
+                              <input
+                                type="password"
+                                id="password"
+                                name="Password"
+                                placeholder=" Your Password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                style={{
+                                  borderColor: "#dfdbdf",
+                                  borderStyle: "groove",
+                                  border: "0px solid #ccc",
+                                  marginLeft: "0px",
+                                }}
+                              ></input>
+
+                              <input
+                                type="password"
+                                id="password"
+                                name="Password"
+                                placeholder=" Confirm your Password"
+                                value={confirmpassword}
+                                onChange={(e) =>
+                                  setConfirmPassword(e.target.value)
+                                }
+                                style={{
+                                  borderColor: "#dfdbdf",
+                                  borderStyle: "groove",
+                                  border: "0px solid #ccc",
+                                  marginLeft: "0px",
+                                }}
+                              ></input>
+
+                              <button
+                                type="submit"
+                                className="btn "
+                                id="send-button"
+                                style={{
+                                  lineHeight: "20px",
+                                  fontSize: "24px",
+                                  background: "#B1E457",
+                                  height: "45px",
+                                  color: "#212936",
+                                  fontFamily: "Mohave",
+                                  fontWeight: "500px",
+                                  marginLeft: "0px",
+                                }}
+                              >
+                                Sign In
+                              </button>
                             </form>
                           </div>
                         </div>
-
-                        <div className="col-md-10" id="passwordCol">
-                          <form action="submit" method="post">
-                            <input
-                              type="password"
-                              id="password"
-                              name="Password"
-                              placeholder=" Your Password"
-                              style={{
-                                borderColor: "#dfdbdf",
-                                borderStyle: "groove",
-                                border: "0px solid #ccc",
-                                marginLeft: "0px",
-                              }}
-                            ></input>
-                          </form>
-                        </div>
-
-                        <div className="col-md-10" id="confirmPasswordCol">
-                          <form action="submit" method="post">
-                            <input
-                              type="password"
-                              id="password"
-                              name="Password"
-                              placeholder=" Confirm your Password"
-                              style={{
-                                borderColor: "#dfdbdf",
-                                borderStyle: "groove",
-                                border: "0px solid #ccc",
-                                marginLeft: "0px",
-                              }}
-                            ></input>
-                          </form>
-                        </div>
-
-                        <button
-                          type="submit"
-                          className="btn "
-                          id="send-button"
-                          style={{
-                            lineHeight: "20px",
-                            fontSize: "24px",
-                            background: "#B1E457",
-                            height: "45px",
-                            color: "#212936",
-                            fontFamily: "Mohave",
-                            fontWeight: "500px",
-                            marginLeft: "0px",
-                          }}
-                        >
-                          Sign In
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -146,9 +253,13 @@ const Login = () => {
               </div>
               <div className="column" style={{ margin: "0" }}>
                 <p id="donthaveanaccount">
-                  Don't have an account?<span id="signup">Sign Up</span>
+                  Already have an accounts?
+                  <span id="signup">
+                    <a href="/" style={{ color: "rgba(88,130,14,1)" }}>
+                      Login
+                    </a>
+                  </span>
                 </p>
-                <p id="forgotpassword">Forgot password?</p>
               </div>
             </div>
           </div>
@@ -158,4 +269,7 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
+function push(arg0: string) {
+  throw new Error("Function not implemented.");
+}

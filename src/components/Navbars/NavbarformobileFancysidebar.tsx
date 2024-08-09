@@ -38,7 +38,7 @@ export default function NavbarformobileFancysidebar() {
             </Col>
 
             <Col>
-              <Nav.Link href="/Exit" id="Exit">
+              <Nav.Link href="/" id="Exit">
                 Exit
               </Nav.Link>
             </Col>

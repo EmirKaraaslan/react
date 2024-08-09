@@ -14,6 +14,7 @@ import PersonList from "./components/Cards/PersonList";
 import Tasks from "./components/Cards/Tasks";
 import DoneTasks from "./components/Cards/DoneTasks";
 import NavbarformobileFancysidebar from "./components/Navbars/NavbarformobileFancysidebar";
+import Register from "./components/Registers/Register";
 
 function App() {
  
@@ -33,8 +34,11 @@ function App() {
 
         
 
+        
+
         <Routes>
-          <Route path="/" element={<NewsCard />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/Register" element={<Register/>} />
           <Route path="/Profile" element={<Profile/>}/>
           <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/Contact" element={<ContactCard/>}/>
@@ -42,7 +46,6 @@ function App() {
           <Route path="/PersonList" element={<PersonList/>}/>
           <Route path="/Tasks" element={<Tasks/>}/>
           <Route path="/DoneTasks" element={<DoneTasks/>}/>
-          <Route path="/Exit" element={<Login/>}/>
 
         </Routes>
       </Router>
