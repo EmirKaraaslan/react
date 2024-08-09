@@ -1,15 +1,8 @@
-import React from 'react'
-
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+import { getApp, getApps, initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import {getAuth ,signInWithEmailAndPassword} from "firebase/auth";
-import 'firebase/compat/auth';
-import 'firebase/compat/database';
-
-//Firebase in kendi sitesinedeki dokümandan almış olduğum bu kaynak 
-//kodu ekleyerek ilk aşamayı başlatıyorum.
-
+import { getDatabase } from "firebase/database";
+import { getAuth } from "firebase/auth";
 
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -18,27 +11,19 @@ import 'firebase/compat/database';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAqQZQ_ERZdv-l7qXKNZtQBHlbO9Xg36tI",
-  authDomain: "cybersoft-mywork.firebaseapp.com",
-  projectId: "cybersoft-mywork",
-  storageBucket: "cybersoft-mywork.appspot.com",
-  messagingSenderId: "1064592922887",
-  appId: "1:1064592922887:web:28aa0261f9760807abcda2",
-  measurementId: "G-WQ49VEPVWD"
+  apiKey: "AIzaSyCyeNjI-GxDdsVJSvOA8GEQorN0UWYlobE",
+  authDomain: "mywork-db.firebaseapp.com",
+  databaseURL: "https://mywork-db-default-rtdb.firebaseio.com",
+  projectId: "mywork-db",
+  storageBucket: "mywork-db.appspot.com",
+  messagingSenderId: "431892570255",
+  appId: "1:431892570255:web:4536694271b8c31ff490fa",
+  measurementId: "G-FRZQSRDLDQ"
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+const database = getDatabase(app);
 const auth = getAuth(app);
 
-export {app , auth};
-
-export default function firebase() {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+export { database, auth };

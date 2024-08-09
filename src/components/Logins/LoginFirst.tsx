@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "../../styles/login.scss";
 import phoneIcon from "../pngandicons/phone-call.png";
-import { auth } from "../firebase/firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
+import { auth } from "../firebase/firebase";
 /**
  * const Login = () => { ... }
  *

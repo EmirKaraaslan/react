@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import "../../styles/register.scss";
 import phoneIcon from "../pngandicons/phone-call.png";
-import { auth } from "../firebase/firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { getAuth } from "firebase/auth";
+import { getDatabase, ref, set } from "firebase/database";
+import { auth } from "../firebase/firebase";
+
+
 
 /**
  * const Login = () => { ... }
@@ -61,21 +65,38 @@ const Register: React.FC = () => {
    * arka planda farklı bir iş gerçekleşeceği için asenkron bir işlem.
    */
 
+  function writeUserData( name:string,email:String) {
+    const db = getDatabase();
+    set(ref(db, 'users/'), {
+      username: name,
+      email: email,
+    });
+  }
+
+
+
+
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     setRegisterSuccess(null);
+
+
 
     try {
       // firebase in kendi fonksiyonu
       await createUserWithEmailAndPassword(auth, email, password);
 
       // giriş doğruysa
-      console.log("Login successful");
+      console.log("Register successful");
       setRegisterSuccess(true);
-      navigate("/NewsCard");
+      writeUserData(name,email);
+      
 
-      // buraya yönledirir
-      navigate("/AboutUs");
+
+      navigate("/");
+
+     
+
     } catch (error) {
       console.log("Error: ", error);
       setError((error as Error).message);
@@ -138,6 +159,8 @@ const Register: React.FC = () => {
                       <div className="row" id="row">
                         <div className="col-md-9" id="emailCol">
                           <div className="form-outline">
+
+
                             {registerSuccess === false && (
                               <div className="loginfailallert">
                                 <div
@@ -273,3 +296,7 @@ export default Register;
 function push(arg0: string) {
   throw new Error("Function not implemented.");
 }
+function saveUser(name: string, email: string) {
+  throw new Error("Function not implemented.");
+}
+
