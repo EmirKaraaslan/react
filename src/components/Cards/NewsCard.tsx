@@ -88,7 +88,7 @@ const News: React.FC = () => {
 
   useEffect(() => {
     fetch(
-      "https://newsapi.org/v2/everything?q=bjk&apiKey=e67f8d97a6ec44b482a9dc5c02742d7a"
+      "your postman api key"
     )
       .then((response) => response.json())
       .then((data: ApiResponse) => {
