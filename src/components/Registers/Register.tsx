@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { getAuth } from "firebase/auth";
 import { getDatabase, ref, set } from "firebase/database";
 import { auth } from "../firebase/firebase";
-import { deneme, writeUserData } from "../../functions/DbActions";
+import { writeUserData } from "../../functions/DbActions";
 
 
 
@@ -22,6 +22,8 @@ import { deneme, writeUserData } from "../../functions/DbActions";
  * catch leyebiliriz.
  *
  */
+
+
 
 const Register: React.FC = () => {
   /**
@@ -37,6 +39,7 @@ const Register: React.FC = () => {
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
+
 
   // login doğruysa useNavigate() fonksiyonunu kullnamak için bunu tanımlıyorum
   const navigate = useNavigate();

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import FancySidebar from "./../fancySidebar";
 import NavbarwithSearch from "../Navbars/NavbarwithSearch";
 import { Card, CardGroup, Col, Container, Row } from "react-bootstrap";
@@ -6,8 +6,11 @@ import { useMediaQuery } from "react-responsive";
 import NavbarformobileFancysidebar from "../Navbars/NavbarformobileFancysidebar";
 import "./../../styles/Profile.scss";
 import { Button } from "bootstrap";
+import { update } from "firebase/database";
+import { getAuth, updateCurrentUser } from "firebase/auth";
+import { updateProfile } from "firebase/auth";
 
-const News = () => {
+const News: React.FC = () => {
   const isWideScreen = useMediaQuery({ query: "(min-width: 1024px)" });
   const isTablet = useMediaQuery({
     query: "(min-width: 768px) and (max-width: 1024px)",
@@ -16,6 +19,41 @@ const News = () => {
   const isMediumScreen = useMediaQuery({
     query: "(min-width: 480px) and (max-width: 767px)",
   });
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState<string | null>(null);
+
+  //Update
+
+  interface User {
+    name: string | undefined | null,
+    email: string | undefined | null,
+    phoneNumber: string | undefined | null,
+    password: string | undefined | null,
+
+  }
+
+
+  const [user , setUser]= useState<User>()
+
+
+  const updateProfileHandler = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const auth = getAuth();
+
+
+    try {
+       
+      
+
+    } catch (error) {
+      setError((error as Error).message);
+      console.log("Error: ", error);
+    }
+  };
 
   return (
     <div>
@@ -26,10 +64,7 @@ const News = () => {
         rel="stylesheet"
       />
       <Container fluid>
-        <div
-          className="row"
-          style={{  justifyContent: "center" }}
-        >
+        <div className="row" style={{ justifyContent: "center" }}>
           <div
             className="col col-md-3"
             style={{
@@ -76,71 +111,62 @@ const News = () => {
             >
               <Card id="cardItselfprofile">
                 <Card.Body>
+                  <Row id="formrow">
+                    <p>Change Picture</p>
 
+                    <form onSubmit={updateProfileHandler}>
+                      <div className="col" id="profileCol">
+                        <input
+                          type="name"
+                          id="nameprofile"
+                          name="name"
+                          placeholder="Username"
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
+                        ></input>
+                      </div>
 
-                    <Row id="formrow">
+                      <div className="col" id="profileCol">
+                        <input
+                          type="email"
+                          id="emailprofile"
+                          name="email"
+                          placeholder="Email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                        ></input>
+                      </div>
 
-                      <p>Change Picture</p>
+                      <div className="col" id="profileCol">
+                        <input
+                          type=""
+                          id="phonenumberprofile"
+                          name="phonenumber"
+                          placeholder="Phone number"
+                          value={phoneNumber}
+                          onChange={(e) => setPhoneNumber(e.target.value)}
+                        ></input>
+                      </div>
 
+                      <div className="col" id="profileCol">
+                        <input
+                          type="password"
+                          id="passwordprofile"
+                          name="password"
+                          placeholder="password"
+                          value={password}
+                          onChange={(e) => setPassword(e.target.value)}
+                        ></input>
+                      </div>
 
-
-                    <form action="submit" method="post">
-                      <input
-                        type="name"
-                        id="nameprofile"
-                        name="name"
-                        placeholder="Username"
-                        
-                      ></input>
+                      <button className="btn" id="button">
+                        Update
+                      </button>
                     </form>
-
-                    <form action="submit" method="post">
-                      <input
-                        type="email"
-                        id="emailprofile"
-                        name="email"
-                        placeholder="Email"
-                        
-                      ></input>
-                    </form>
-
-                    <form action="submit" method="post">
-                      <input
-                        type=""
-                        id="phonenumberprofile"
-                        name="phonenumber"
-                        placeholder="Phone number"
-                       
-                      ></input>
-                    </form>
-
-                    <form action="submit" method="post">
-                      <input
-                        type="password"
-                        id="passwordprofile"
-                        name="password"
-                        placeholder="password"
-                       
-                      ></input>
-                    </form>
-                    
-
-                    </Row>
-                    <Row id="updatebutton">
-                    <button className="btn" id="button">Update</button>
-
-
-                    </Row>
-                  
-                  
-
-                  
+                  </Row>
                 </Card.Body>
               </Card>
             </div>
-
-          
-        
           </div>
         </div>
       </Container>

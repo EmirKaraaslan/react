@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useMediaQuery } from "react-responsive";
 import NewsCard from "./components/Cards/NewsCard";
 import AboutUs from "./components/Cards/AboutUs";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import Login from "./components/Logins/LoginFirst";
 import Profile from "./components/Cards/Profile";
 import ContactCard from "./components/Cards/ContactCard";
@@ -15,10 +15,26 @@ import Tasks from "./components/Cards/Tasks";
 import DoneTasks from "./components/Cards/DoneTasks";
 import NavbarformobileFancysidebar from "./components/Navbars/NavbarformobileFancysidebar";
 import Register from "./components/Registers/Register";
+import AdminPanel from "./components/admin/AdminPanel"
+import AdminTaskManager from "./components/admin/AdminTaskManger"
+import { auth } from "./components/firebase/firebase";
 
-function App() {
+
+
+
+
+function App({...rest}) {
+
+  const isAdmin = auth.currentUser?.email === "admin@gmail.com";
+
  
   return (
+
+
+    
+
+
+
     <div className="App">
 
     
@@ -32,10 +48,15 @@ function App() {
 
         </nav>
 
-        
-
-
         <Routes>
+        <Route
+          path="/AdminTaskManager"
+          element={
+            isAdmin ? <AdminTaskManager /> : <Navigate to="/not-authorized" />
+          }
+        />
+      
+          
           <Route path="/" element={<Login />} />
           <Route path="/Register" element={<Register/>} />
           <Route path="/Profile" element={<Profile/>}/>
@@ -45,8 +66,16 @@ function App() {
           <Route path="/PersonList" element={<PersonList/>}/>
           <Route path="/Tasks" element={<Tasks/>}/>
           <Route path="/DoneTasks" element={<DoneTasks/>}/>
+          <Route path="/admin" element={<AdminPanel/>}/>
+
 
         </Routes>
+
+
+      
+
+
+        
       </Router>
     </div>
   );
