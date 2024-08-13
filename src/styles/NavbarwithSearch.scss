@@ -24,6 +24,15 @@
   color: rgba(0, 0, 0, 1);
 }
 
+#Profile:hover {
+  background: rgba(157, 157, 255, 1);
+ 
+ border-radius: 10px;
+}
+
+
+
+
 #Aboutus {
   font-family: Raleway;
   font-size: auto;
@@ -32,6 +41,13 @@
   color: rgba(0, 0, 0, 1);
 }
 
+#Aboutus:hover {
+  background: rgba(157, 157, 255, 1);
+ 
+ border-radius: 10px;
+}
+
+
 #Contact {
   font-family: Raleway;
   font-size: auto;
@@ -39,6 +55,14 @@
   text-align: left;
   color: rgba(0, 0, 0, 1);
 }
+
+
+#Contact:hover {
+  background: rgba(157, 157, 255, 1);
+ 
+ border-radius: 10px;
+}
+
 
 #Exit {
   font-family: Raleway;

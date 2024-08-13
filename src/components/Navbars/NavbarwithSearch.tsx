@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
@@ -7,8 +7,43 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import exitdoor from "./../pngandicons/doorexit.png";
 import "./../../styles/NavbarwithSearch.scss";
+import { useNavigate } from "react-router-dom";
+
+
 
 export default function NavbarwithSearch() {
+
+ const [inputValue ,setInputValue] = useState<string>("");
+  
+const navigate = useNavigate();
+
+
+const handleSubmit = (event:any) => {
+  event.preventDefault();
+  
+  const value = inputValue.trim().toLowerCase();
+
+  // İstediğiniz yönlendirme mantığını buraya ekleyin
+  if (value === "info") {
+    navigate('/Profile');
+  } else if (value === "news") {
+    navigate('/NewsCard');
+  } else if (value === "tasks" || value === "task") {
+    navigate('/Tasks');
+  } else if (value === "done tasks" || value === "done" || value === "donetasks") {
+    navigate('/DoneTasks');
+  } else if (value === "person list" || value === "person" || value === "persons") {
+    navigate('/PersonList');
+  } else if (value === "about us" || value === "about") {
+    navigate('/AboutUs');
+  } else if (value === "contact") {
+    navigate('/Contact');
+  } else {
+    navigate('/NewsCard'); // Varsayılan yönlendirme
+  }
+};
+
+
   return (
     <div>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -34,12 +69,17 @@ export default function NavbarwithSearch() {
           }}
         >
           <Col xs="auto">
+          <Form onSubmit={handleSubmit}>
             <Form.Control
+            
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
               id="form"
               type="text"
               placeholder="Search"
               className="mr-sm-2"
             />
+            </Form>
           </Col>
           <Col xs="auto" style={{ justifyContent: "space-between" }}>
             <Nav className="d-flex">

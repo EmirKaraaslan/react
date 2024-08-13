@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./../styles/fancySidebar.scss";
 import { DropdownItem, NavItem } from "react-bootstrap";
 import { Button, Dropdown } from "bootstrap";
@@ -7,8 +7,15 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import prg from "./../components/pngandicons/prg.png";
 import { Link } from "react-router-dom";
 const FancySidebar = () => {
+
+  const [isVisible , setIsVisible] = useState<boolean>(true);
+
+  function handleClickVisibility() {
+      setIsVisible(!isVisible);
+  }
   
   useEffect(() => {
+
 
 
 
@@ -87,20 +94,21 @@ const FancySidebar = () => {
           MyWork
         </div>
         <button
-          className="btn"
-          id="buttonmenu"
-          style={{
-            fontFamily: "Mohave",
-            fontSize: "14px",
-            fontWeight: "500",
-            color: "#fff",
-          }}
-        >
-          <img src={prg} style={{ width: "15px", height: "15px" }}></img>
-          Menu
-        </button>
+        className="btn"
+        id="buttonmenu"
+        style={{
+          fontFamily: "Mohave",
+          fontSize: "14px",
+          fontWeight: "500",
+          color: "#fff",
+        }}
+        onClick={handleClickVisibility} // Butona tıklama olayını bağlayın
+      >
+        <img src={prg} style={{ width: "15px", height: "15px" }} alt="menu icon" />
+        Menu
+      </button>
 
-        <ul className="menulist">
+        <ul className="menulist" style={{ display: isVisible ? 'block' : 'none' }}>
           <li
             style={{
               fontFamily: "Mohave",

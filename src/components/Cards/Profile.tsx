@@ -106,7 +106,7 @@ const News = () => {
 
                     <form action="submit" method="post">
                       <input
-                        type="number"
+                        type=""
                         id="phonenumberprofile"
                         name="phonenumber"
                         placeholder="Phone number"

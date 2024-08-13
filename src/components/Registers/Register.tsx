@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { getAuth } from "firebase/auth";
 import { getDatabase, ref, set } from "firebase/database";
 import { auth } from "../firebase/firebase";
+import { deneme, writeUserData } from "../../functions/DbActions";
 
 
 
@@ -65,13 +66,6 @@ const Register: React.FC = () => {
    * arka planda farklı bir iş gerçekleşeceği için asenkron bir işlem.
    */
 
-  function writeUserData( name:string,email:String) {
-    const db = getDatabase();
-    set(ref(db, 'users/'), {
-      username: name,
-      email: email,
-    });
-  }
 
 
 
@@ -114,7 +108,7 @@ const Register: React.FC = () => {
         href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:wght@100..900&family=Mohave:ital,wght@0,300..700;1,300..700&display=swap"
         rel="stylesheet"
       ></link>
-      <body>
+      <body id="bodyregister">
         <div className="container-fluid">
           <div className="row" id="rowGeneral">
             <div className="col-md-1" id="columnModel">

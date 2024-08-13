@@ -22,8 +22,9 @@ export default function Navbar() {
                       <a className="nav-link " id="aboutUs" href="/AboutUs" style={{ color: 'black' }}>About us</a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link active" id="contact" href="/Contact" style={{ fontSize: 'auto', color: 'black', backgroundColor: "#9d9dff" }}>Contact</a>
+                      <a className="nav-link " id="aboutUs" href="/Contact" style={{ color: 'black' }}>Contact</a>
                     </li>
+                   
                     <li className="nav-item">
                       <img src={exitlogo} className='nav-icon' ></img>
                     </li>

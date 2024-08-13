@@ -6,6 +6,8 @@ import { useMediaQuery } from "react-responsive";
 import NavbarformobileFancysidebar from "../Navbars/NavbarformobileFancysidebar";
 import "./../../styles/AboutUs.scss";
 import { Button } from "bootstrap";
+import burgerNavbar from "./../Navbars/burgerNavbar"
+import Navbar from "../Navbars/Navbar";
 
 const News = () => {
   const isWideScreen = useMediaQuery({ query: "(min-width: 1024px)" });
@@ -33,15 +35,15 @@ const News = () => {
           <div
             className="col col-md-3"
             style={{
-              width: "auto",
+              width:"fit-content",
               padding: "0px",
               // border: "2px solid yellow",
               justifyContent: "center",
             }}
           >
-            {isSmallScreen && <NavbarformobileFancysidebar />}
+            {isSmallScreen && <NavbarformobileFancysidebar/>}
             {isTablet && <NavbarformobileFancysidebar />}
-            {isWideScreen && <FancySidebar />}
+            {isWideScreen && <Navbar />}
             <Card />
           </div>
           <div
@@ -62,7 +64,6 @@ const News = () => {
                 justifyContent: "center",
               }}
             >
-              {isWideScreen && <NavbarwithSearch />}
             </div>
 
             <div
